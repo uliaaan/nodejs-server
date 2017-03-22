@@ -1,0 +1,26 @@
+include ../courses-slides/index
+
+//- слайды двигать через transform: translate3d(-100%,0,0) у блока '#coursesReviewsSlider'
+//- при достижении крайнего слайда - вешать на одну из стрелок модификатор 'courses-reviews__control_hidden'
+
+mixin courses-reviews(data)
+  - data = data || {};
+  - data.slides = data.slides || [];
+
+  +b.courses-reviews
+    +e('h2').title Что говорят о курсах люди
+
+    +e.slider
+      +e.control._left._hidden
+        +e.control-button._left
+      +e.control._right
+        +e.control-button._right
+
+      +e.slides-wrapper
+        +courses-slides(data.slides)#coursesReviewsSlider.courses-reviews__slides
+
+      - var page = 0
+      +e('ul').pagination
+        while page < data.slides.length
+          +e('li').page(class=(page === 0) ? 'courses-reviews__page_active' : '')
+          - page++

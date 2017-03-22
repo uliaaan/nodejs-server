@@ -1,0 +1,38 @@
+include ../blocks/courses-reviews/index
+
+extends /layouts/main
+
+block append variables
+  - var headTitle = 'Отзывы';
+  - var sitetoolbar = true
+  - var layout_main_class = 'main_width-limit-wide'
+
+block append head
+  !=css('markup')
+
+block content
+  +courses-reviews({
+    slides: [{
+      title: 'Курс JavaScript/DOM/Интерфейсы',
+      rating: 3,
+      text: 'Очень доволен данным курсом.Я сам из Республики Беларусь.Практический все, с кем я общался по js, хоть раз да заходили на ваш сайт. Если кто-то решится из РБ пройти этот курс, рекомендую. Понравилось: подача материала, расставленные приоритеты в изучении, только актуальные данные , а не устаревшая информация. Мне не хватило пару занятий по организации проекта на js и про шаблоны. Хотел пройти курс у человека, который Очень доволен данным курсом.Я сам из Республики Беларусь.Практический все, с кем я общался по js, хоть раз да заходили на ваш сайт. Если кто-то решится из РБ пройти этот курс, рекомендую. Понравилось: подача материала, расставленные приоритеты в изучении, только актуальные данные , а не устаревшая информация. Мне не хватило пару занятий по организации проекта на js и про шаблоны. Хотел пройти курс у человека, который',
+      author: 'Александр Луговой',
+      img: 'http://cryazone.com/uploads/posts/2011-08/quentin-tarantino-photo-by-nicolas-guerin.jpg',
+      address: {
+        country: 'russia',
+        name: 'Россия, Москва'
+      }
+    }, {
+      title: 'Курс JavaScript/DOM/Интерфейсы',
+      rating: 5,
+      text: '222',
+      author: 'Александр Луговой',
+      img: 'http://cryazone.com/uploads/posts/2011-08/adrien-brody-photo-by-nicolas-guerin.jpg',
+      address: {
+        country: 'usa',
+        name: 'США, Нью-Йорк'
+      }
+    }, {
+      img: 'http://cryazone.com/uploads/posts/2011-08/takeshi-kitano-photo-by-nicolas-guerin.jpg'
+    }]
+  })

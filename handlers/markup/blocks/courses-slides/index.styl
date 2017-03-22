@@ -1,0 +1,130 @@
+ul.courses-slides
+  margin 0
+  padding 0
+
+.courses-slides
+  white-space nowrap
+  transform translate3d(0,0,0)
+  will-change transform
+  transition transform .5s ease
+
+  ul > li&__slide
+    margin 0
+
+  &__slide
+    background-color background_yellow_dark
+    width 100%
+    display inline-block
+    vertical-align top
+    white-space normal
+    text-align left
+
+    &:before
+      display none
+
+  &__slide-inner
+    height 220px
+    display flex
+    justify-content space-between
+
+    @media tablet
+      flex-direction column-reverse
+
+  &__review
+    background-color background_yellow_light
+    width 79%
+    padding 21px 33px
+    box-sizing border-box
+    position relative
+
+    &:after
+      position absolute
+      content ''
+      margin auto
+      top 0
+      bottom 0
+      right -21px
+      height 0
+      width 0
+      border-top 13px solid transparent
+      border-bottom 13px solid transparent
+      border-left 21px solid background_yellow_light
+
+    @media tablet
+      width 100%
+
+      &:after
+        right 0
+        left 0
+        bottom auto
+        top -21px
+        border-top none
+        border-bottom 21px solid background_yellow_light
+        border-left 13px solid transparent
+        border-right 13px solid transparent
+
+  h3&__title
+    display inline-block
+    vertical-align
+    color gray_color
+    font-size 16px
+    line-height 22px
+    font-weight bold
+    margin 0 10px 0 0
+
+  ul&__rating
+    display inline-block
+    vertical-align top
+    margin-top 1px
+
+  &__userpic
+    width 86px
+    height 86px
+    border-radius 50%
+
+  &__text
+    margin-top 10px
+    line-height 19px
+
+  &__more
+    display block
+    margin-top 10px
+
+  &__address
+    color light_gray_color
+    font-size 14px
+    padding 0 20px
+
+  &__country-flag
+    margin-right 5px
+    display inline-block
+    vertical-align baseline
+
+  &__author
+    width 21%
+    box-sizing border-box
+    text-align center
+    display flex
+    justify-content center
+    align-items center
+
+    @media tablet
+      display block
+      padding-top 21px
+      padding-bottom 35px
+
+  &__author-inner
+    display flex
+    flex-direction column
+    align-items center
+
+  &__author-link
+    display block
+
+  p&__name
+    margin 3px 0
+    padding 0 20px
+    display block
+    font-size 14px
+    line-height 19px
+    font-weight bold

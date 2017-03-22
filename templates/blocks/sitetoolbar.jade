@@ -1,0 +1,61 @@
+block append variables
+  - var siteToolbarSections = []
+  - siteToolbarSections.push({ slug: 'tutorial', title: 'Учебник' });
+  - siteToolbarSections.push({ slug: 'courses', url: '/courses', title: 'Курсы' });
+  - siteToolbarSections.push({ url: 'http://javascript.ru/forum', title: 'Форум' });
+  - siteToolbarSections.push({ url: 'http://es5.javascript.ru', title: 'ES5' });
+  - siteToolbarSections.push({ url: 'http://javascript.ru/manual', title: 'Справочник' });
+
+<!--[if lt IE 10]>
+div(style="color:red;text-align:center")= t("site.sorry_old_browser")
+<![endif]-->
+
+if lang=='ru'
+  +b(class = 'sitetoolbar' + (bookChildNumber ? '_tutorial' : ''))
+    //include ./notification-stripe
+
+    +e.content
+      +e.logo-wrap
+        +e('a').link._logo(href="/")
+
+          +e('img').logo._normal(src="/img/" + t("site.toolbar.logo.svg"), width=t("site.toolbar.logo.width"))
+          +e('img').logo._small(src="/img/sitetoolbar__logo_small.svg")
+          script
+            :uglify
+              (function() {
+
+                /* chrome renders embed.svg with a delay,
+                 this loads embed later to prevent flickering */
+                Array.prototype.forEach
+                  .call(
+                    document.querySelectorAll('img.sitetoolbar__logo'),
+                    function(logo) {
+                      var embed = document.createElement('object');
+                      embed.type='image/svg+xml';
+
+                      embed.className = logo.className;
+                      embed.style.cssText = 'left:0;top:0;position:absolute';
+
+                      embed.onload = function() {
+                        embed.onload = null;
+                        logo.style.visibility = 'hidden';
+                      };
+                      embed.data = logo.src;
+                      logo.parentNode.insertBefore(embed, logo);
+                    });
+              })();
+      +e.nav-toggle-wrap
+        +e('button').nav-toggle(onclick="document.querySelector('.sitetoolbar').classList.toggle('sitetoolbar_menu_open')" type="button")
+
+      +e('nav').sections
+        +e('ul').sections-list
+          each section in siteToolbarSections
+            +e('li')(class=["section", section.slug && siteToolbarCurrentSection == section.slug && '_current' || undefined])
+              +e('a').link(href=section.url ? section.url : ('/' + section.slug))= section.title
+
+          
+
+      include ./guest
+
+      include ./search      
+
