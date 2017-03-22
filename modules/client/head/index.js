@@ -14,6 +14,7 @@ try {
   }
 }
 
+exports.login = require('./login');
 exports.Modal = require('./modal');
 exports.fontTest = require('./fontTest');
 exports.resizeOnload = require('./resizeOnload');
