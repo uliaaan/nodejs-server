@@ -20,7 +20,7 @@ class AuthModal extends Modal {
         this.options.inModal = true;
 
         let authForm = new AuthForm(this.options);
-        //this.setContent(authForm.getElem());
+        this.setContent(authForm.getElem());
     }
 
     render() {

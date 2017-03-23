@@ -66,9 +66,11 @@ module.exports = function(config) {
 
     entry: {
       styles:                    config.tmpRoot + '/styles.styl',
+      auth:                      'auth/client',
       head:                      'client/head',
       tutorial:                  'tutorial/client',
-      footer:                    'client/footer',
+      footer:                    'client/footer'
+      
     },
 
     module: {

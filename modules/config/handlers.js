@@ -42,6 +42,7 @@ var handlers = [
 
   process.env.NODE_ENV == 'development' && 'markup',
 
+  'auth',
 
   'tutorial'
 ];

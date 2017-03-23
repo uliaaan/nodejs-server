@@ -9,7 +9,7 @@ document.addEventListener('click', openLoginForm);
 
 function openLoginForm(event) {
 
-    if(!event.target.hasAttribute('data-action-login'))return;
+    if(!event.target.hasAttribute('data-action-login')) return;
 
     event.preventDefault();
 
@@ -22,7 +22,11 @@ function login() {
     modal.setContent(spinner.elem);
     spinner.start();
 
-
+    require.ensure('auth/client/authModal', function() {
+        modal.remove();
+        var AuthModal = require('auth/client/authModal');
+        new AuthModal();
+    }, 'authClient');
 
 }
 

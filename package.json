@@ -75,11 +75,11 @@
   "engineStrict": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/iliakan/javascript.git"
+    "url": "https://github.com/denisschmidt/nodejs-server"
   },
-  "author": "Ilya Kantor",
-  "license": "CC BY-NC-SA 3.0",
+  "author": "Dennis Schmidt",
+  "license": "MID",
   "bugs": {
-    "url": "https://github.com/iliakan/javascript/issues"
+    "url": "https://github.com/denisschmidt/nodejs-server"
   }
 }
