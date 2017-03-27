@@ -6,29 +6,42 @@ const Task = require('../models/task');
 const _ = require('lodash');
 const ArticleRenderer = require('../renderer/articleRenderer');
 const CacheEntry = require('cache').CacheEntry;
-
+const log = require('log')();
 exports.get = function *get(next) {
 
   this.locals.sitetoolbar = true;
   this.locals.siteToolbarCurrentSection = "tutorial";
-  this.locals.title = "Современный учебник JavaScript";
+  this.locals.title = "VASYAO TEAM";
 
 
-  var tutorial = yield CacheEntry.getOrGenerate({
+  var tutorial = yield* CacheEntry.getOrGenerate({
     key:  'tutorial:frontpage',
     tags: ['article']
-  }, renderTutorial);
+  }, renderArticles.bind(this), process.env.TUTORIAL_EDIT);
 
   if (!tutorial.length) {
     this.throw(404, "Database is empty?"); // empty db
   }
 
-  var locals = {
-    chapters: tutorial
-  };
+  let locals = tutorial;
+  
 
   this.body = this.render('frontpage', locals);
 };
+
+
+function* renderArticles(){
+
+  const articles = yield Article.find({}).limit(10).exec();
+  if(!articles){
+    return null;
+  }
+  this.log.debug("article", articles._id);
+  return articles;
+}
+
+
+
 
 // content
 // metadata
@@ -43,6 +56,7 @@ function* renderTutorial() {
   const tree = yield* Article.findTree();
 
   var treeRendered = yield* renderTree(tree);
+  log.debug("treeRendered",treeRendered);
 
   // render top-level content
   for (var i = 0; i < treeRendered.length; i++) {
@@ -80,11 +94,12 @@ function* renderTree(tree) {
 
 
 function* populateContent(articleObj) {
+
   var article = yield Article.findById(articleObj.id).exec();
 
   var renderer = new ArticleRenderer();
 
   var rendered = yield* renderer.renderWithCache(article);
-
+  
   articleObj.content = rendered.content;
 }

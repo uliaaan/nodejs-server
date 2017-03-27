@@ -7,6 +7,7 @@ exports.Article = [
     "content" : "# JS",
     "weight" : 1,
     "slug" : "js",
+    "img_url": "/article/intro/limitations.png",
     "title" : "JavaScript",
     "githubLink": "http://not.exists.com"
   },
@@ -16,6 +17,7 @@ exports.Article = [
     "content" : "# UI",
     "weight" : 2,
     "slug" : "ui",
+     "img_url": "/article/intro/limitations.png",
     "title" : "Интерфейсы",
     "githubLink": "http://not.exists.com"
   },
@@ -25,6 +27,7 @@ exports.Article = [
     "content" : "# UI",
     "weight" : 3,
     "slug" : "more",
+     "img_url": "/article/intro/limitations.png",
     "title" : "Дополнительно",
     "githubLink": "http://not.exists.com"
   },

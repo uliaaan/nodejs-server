@@ -30,7 +30,7 @@ const schema = new Schema({
   },
 
 
-  libs: [String],
+  img_url: [String],
 
   headJs:   String,
   headCss:  String,

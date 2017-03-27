@@ -9,7 +9,7 @@ const _ = require('lodash');
 const CacheEntry = require('cache').CacheEntry;
 const makeAnchor = require('textUtil/makeAnchor');
 const t = require('i18n');
-
+const log = require('log')();
 exports.get = function *get(next) {
 
 
@@ -24,7 +24,7 @@ exports.get = function *get(next) {
   }
 
   var locals = renderedArticle;
-
+  this.log.debug("locals", locals);
   locals.sitetoolbar = true;
 
   locals.githubLink = renderedArticle.githubLink;
@@ -123,8 +123,8 @@ function* renderArticle(slug) {
   var renderer = new ArticleRenderer();
 
   var rendered = yield* renderer.renderWithCache(article);
-
-  this.log.debug("rendered");
+ 
+  log.debug("rendered",rendered.content);
 
   rendered.isFolder = article.isFolder;
   rendered.modified = article.modified;
