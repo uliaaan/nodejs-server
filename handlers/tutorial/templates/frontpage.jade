@@ -23,31 +23,22 @@ block content
   +b.course-info
     +e.header
       +e('h2').header-title Основной курс
-      include /blocks/map-with-title
+      include /blocks/tags
 
     +e.body.columns.columns_2
-      +e.col.columns__col
+      
+       +e.col.columns__col
         +e.content
-          +e.title-note Часть вторая
-          +b('ul').special-links-list
-            - each folder in locals
-             +b('div').box-event
+          +b('ul').box-event.special-links-list
+            - each folder in locals.content
               +e('li').item
+               +e('a')(href=folder.slug) 
                 +e('img')(src=folder.img_url)
-                  +e('a').link(href=folder.slug)= folder.title
+                +e('div').backgroupColor
+                +e('div').title
+                  +e('p')= folder.title
+                +e('div').place
 
-      +e.col.columns__col
-        +e.content
-          +e.title-note Часть вторая
-          +b('ul').special-links-list
-            - each folder in locals
-             +b('div').box-event
-              +e('li').item
-               +e('img')(src=folder.img_url)
-               +e('div').backgroupColor
-               +e('div').title
-               +e('div').place
-                +e('a').link(href=folder.slug)= folder.title
 
   script(type="application/ld+json")
     | {

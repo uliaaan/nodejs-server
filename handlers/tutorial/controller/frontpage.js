@@ -22,17 +22,15 @@ exports.get = function *get(next) {
   if (!tutorial.length) {
     this.throw(404, "Database is empty?"); // empty db
   }
-
-  let locals = tutorial;
+   this.locals.content = tutorial;
   
-
-  this.body = this.render('frontpage', locals);
+   this.body = this.render('frontpage', this.locals);
 };
 
 
 function* renderArticles(){
 
-  const articles = yield Article.find({}).limit(10).exec();
+  const articles = yield Article.find({}).exec();
   if(!articles){
     return null;
   }
