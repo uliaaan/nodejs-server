@@ -5,12 +5,25 @@ block append head
   // - !=js("event", {defer: true})
 
 block content
-   +b("form").search-form(action="/add")
+  +b.event-info
+    +e.header
+      +e('h2').header-title Add new event
+      
+
+   +b("form").search-form(action="/add/")
     +e.content
       +e.line
         +e.query-wrap
-          +b.text-input.__query
-            +e('input').control(type="text", name="query" value=searchQuery)
+          +b('dl').text-input.__query
+            +e('dt').input-label
+              +e('label')(for="title")= 'title'
+            +e('input').control(type="text", name="title" id="title" value=searchQuery)
+
+          +b('dl').text-input.__query
+            +e('dt').input-label
+              +e('label')(for="content")= 'content'
+            +e('textarea').control-area(type="text", name="content" rows="10" cols="46" id="content" value=searchQuery)
+        
         +e.send-wrap
           +b('button').button._action.__send(type="submit" name="type" value=searchType)
             +e('span').text Найти
