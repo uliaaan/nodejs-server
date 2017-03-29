@@ -154,5 +154,5 @@ NODE_LANG=ru ./dev
 
 # TroubleShooting
 
-Если что-то не работает -- [пишите issue](https://github.com/iliakan/javascript-nodejs/issues/new).
+
 

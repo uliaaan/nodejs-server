@@ -1,14 +1,11 @@
-<div class="tags">
-        <ul>
-          <li><a href="#">
-              <div class="tag">party</div></a></li>
-          <li><a href="#">
-              <div class="tag">party</div></a></li>
-          <li><a href="#">
-              <div class="tag">party</div></a></li>
-          <li><a href="#">
-              <div class="tag">party</div></a></li>
-          <li><a href="#">
-              <div class="tag">party</div></a></li>
-        </ul>
-      </div>
++b('div').tags
+    +e('ul')
+     - for (var x = 0; x<5; x++) 
+        +e('li')
+            +e('a')(href="#")
+                +e('div').tag part
+
+
+
+
+

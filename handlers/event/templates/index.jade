@@ -1,0 +1,16 @@
+extends /layouts/main
+
+block append head
+  !=js("event", {defer: true})
+
+block content 
+
+   +b("form").search-form(action="/add")
+    +e.content
+      +e.line
+        +e.query-wrap
+          +b.text-input.__query
+            +e('input').control(type="text", name="query" value=searchQuery)
+        +e.send-wrap
+          +b('button').button._action.__send(type="submit" name="type" value=searchType)
+            +e('span').text Найти
