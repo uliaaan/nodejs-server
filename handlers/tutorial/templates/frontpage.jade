@@ -12,14 +12,6 @@ block content
   +b.intro
     | Vasyao TEAM
     | keep calm and go codding
-  +b.course-search
-    +e('form').form(action="/search/")
-      +e.input-wrap._text
-        +b.text-input.__query
-          +e('input').control(type="text" name="query" placeholder="Искать в учебнике" required)
-      +e.input-wrap._submit
-        +b("button").button._action(type="submit" name="type" value="articles")
-          +e("span").text Найти
   +b.course-info
     +e.header
       include /blocks/tags

@@ -1,10 +1,10 @@
 extends /layouts/main
 
+
 block append head
-  !=js("event", {defer: true})
+  // - !=js("event", {defer: true})
 
-block content 
-
+block content
    +b("form").search-form(action="/add")
     +e.content
       +e.line

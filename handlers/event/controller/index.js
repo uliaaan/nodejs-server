@@ -5,8 +5,8 @@ const Article = require('tutorial').Article;
 
 exports.get = function *get(){
 
-    let locals = {};
 
+    this.locals.sitetoolbar = true;
     /*logged in?
     if(this.user){
         this.redirect('/');
@@ -14,9 +14,9 @@ exports.get = function *get(){
     }
     */
 
-    locals.headTitle = "Add new event";
+    this.locals.headTitle = "Add new event";
 
-    this.body = this.render('index', locals);
+    this.body = this.render('index', this.locals);
 
 
 };

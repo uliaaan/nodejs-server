@@ -46,16 +46,17 @@ if lang=='ru'
               })();
       +e.nav-toggle-wrap
         +e('button').nav-toggle(onclick="document.querySelector('.sitetoolbar').classList.toggle('sitetoolbar_menu_open')" type="button")
-
-      +e('nav').sections
-        +e('ul').sections-list
-          each section in siteToolbarSections
-            +e('li')(class=["section", section.slug && siteToolbarCurrentSection == section.slug && '_current' || undefined])
-              +e('a').link(href=section.url ? section.url : ('/' + section.slug))= section.title
-
+      +b.course-search
+        +e('form').form(action="/search/")
+          +e.input-wrap._text
+            +b.text-input.__query
+              +e('input').control(type="text" name="query" placeholder="Найти событие" required)
+          +e.input-wrap._submit
+            +b("button").button._action(type="submit" name="type" value="articles")
+              +e("span").text Найти
           
 
       include ./guest
 
-      include ./search      
+      //include ./search
 
