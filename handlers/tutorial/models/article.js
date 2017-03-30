@@ -24,7 +24,7 @@ const schema = new Schema({
   slug: {
     type:     String,
     unique:   true,
-    required: true,
+    required: false,
     lowercase: true,
     trim: true
   },
@@ -58,7 +58,7 @@ const schema = new Schema({
 
   weight: {
     type:     Number,
-    required: true
+    required: false
   },
 
   rendered: {
@@ -69,12 +69,12 @@ const schema = new Schema({
 
   githubLink: {
     type:     String,
-    required: true
+    required: false
   },
 
   isFolder: {
     type:     Boolean,
-    required: true
+    required: false
   }
 
 });

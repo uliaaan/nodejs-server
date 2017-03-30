@@ -2,28 +2,35 @@ extends /layouts/main
 
 
 block append head
-  // - !=js("event", {defer: true})
+    // - !=js("event", {defer: true})
 
 block content
-  +b.event-info
-    +e.header
-      +e('h2').header-title Add new event
-      
 
-   +b("form").search-form(action="/add/" method="POST")
-    +e.content
-      +e.line
-        +e.query-wrap
-          +b('dl').text-input.__query
-            +e('dt').input-label
-              +e('label')(for="title")= 'title'
-            +e('input').control(type="text", name="title" id="title" value=searchQuery)
+    +b.event-info
+        +e.header
+            +e('h2').header-title Добавление события
 
-          +b('dl').text-input.__query
-            +e('dt').input-label
-              +e('label')(for="content")= 'content'
-            +e('textarea').control-area(type="text", name="content" rows="10" cols="46" id="content" value=searchQuery)
-        
-        +e.send-wrap
-          +b('button').button._action.__send(type="submit" name="type" value=searchType)
-            +e('span').text Add
+    if error
+        +b.notification._message._error.__message
+            +e.content= error
+            +e('button').close(title="Закрыть")
+
+    +b("form").search-form(action="/event/add" method="POST")
+        +e.content
+            +e.line
+                +e.label-wrap
+                    +e('label').label(for="title") Заголовок
+                +e.input-wrap
+                    +b.text-input._small.__input
+                        +e('input').control#title(type="text" name="title" autofocus)
+
+                +e.label-wrap
+                    +e('label').label(for="content") Описание
+                +e('dt').input-label
+                    +e('textarea').control-area(type="text", name="content" rows="10" cols="46" id="content")
+
+
+                +e.save-wrap
+                    +b('button').button._action.__save
+                        +e('text') Добавить
+

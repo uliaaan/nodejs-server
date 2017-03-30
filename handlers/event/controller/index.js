@@ -2,21 +2,86 @@
 
 let mongoose = require('mongoose');
 const Article = require('tutorial').Article;
+const log = require('log')();
 
-exports.get = function *get(){
+exports.get = function*(next) {
 
 
     this.locals.sitetoolbar = true;
     /*logged in?
-    if(this.user){
-        this.redirect('/');
-        return ;
-    }
-    */
+     if(this.user){
+     this.redirect('/');
+     return ;
+     }
+     */
 
-    this.locals.headTitle = "Add new event";
+    this.locals.headTitle = "Добавление события";
 
     this.body = this.render('index', this.locals);
 
 
 };
+
+
+exports.post = function*(next) {
+
+    let error = "";
+    this.locals.sitetoolbar = true;
+    let fields = this.request.body;
+
+    if (!fields.title) {
+        error = "Заголовок мероприятия не может быть пустым!";
+    }
+
+    if (!fields.content) {
+        error = "Введите описание мероприятия";
+    }
+
+    if (error) {
+        this.body = this.render("index", {
+            error: error
+        });
+
+        return;
+    }
+
+    const data = {
+        isFolder: true
+    };
+
+    data.parent = "212";
+    data.weight = 4;
+    data.slug = 'devtoolsssss';
+
+    data.title = fields.title;
+    data.content = fields.content;
+    data.githubLink = "ddddd";
+
+
+    const folder = new Article(data);
+
+    try {
+        yield folder.persist();
+    } catch(e) {
+        if (e.name == 'ValidationError') {
+            try {
+                if (e.errors.email.type == "notunique") {
+                    e.errors.email.message += ' Если он ваш, то можно <a data-switch="login-form" href="#">войти</a> или <a data-switch="forgot-form" href="#">восстановить пароль</a>.';
+                }
+            } catch (ex) { /* e.errors.email is undefined, that's ok */ }
+            this.renderError(e);
+            return;
+        } else {
+            this.throw(e);
+        }
+    }
+
+
+//    article.save(function (err) {
+
+    //});
+
+    this.status = 201;
+    this.body = '';
+};
+
