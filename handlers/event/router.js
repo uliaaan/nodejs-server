@@ -8,4 +8,4 @@ let router = module.exports = new Router();
 
 router.get('/', index.get);
 
-router.post('/add', add.get);
+router.post('/add', add.post);

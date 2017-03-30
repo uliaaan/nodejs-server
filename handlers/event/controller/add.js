@@ -4,9 +4,9 @@ let mongoose = require('mongoose');
 const Article = require('tutorial').Article;
 const log = require('log')();
 
-exports.get = function *get(next){
+exports.post = function*(next){
 
-    log.debug("title", this.request.title);
+    log.debug("title", this.request.body.title);
 
 
 };

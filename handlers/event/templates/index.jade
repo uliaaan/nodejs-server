@@ -10,7 +10,7 @@ block content
       +e('h2').header-title Add new event
       
 
-   +b("form").search-form(action="/add/")
+   +b("form").search-form(action="/add/" method="POST")
     +e.content
       +e.line
         +e.query-wrap
@@ -26,4 +26,4 @@ block content
         
         +e.send-wrap
           +b('button').button._action.__send(type="submit" name="type" value=searchType)
-            +e('span').text Найти
+            +e('span').text Add
