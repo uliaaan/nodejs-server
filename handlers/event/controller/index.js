@@ -2,6 +2,7 @@
 
 let mongoose = require('mongoose');
 const Article = require('tutorial').Article;
+const transliterate = require('textUtil/transliterate');
 const log = require('log')();
 
 exports.get = function*(next) {
@@ -49,9 +50,9 @@ exports.post = function*(next) {
         isFolder: true
     };
 
-    data.parent = "212";
+    //data.parent = "212";
     data.weight = 4;
-    data.slug = 'devtoolsssss';
+    data.slug = transliterate(fields.title);
 
     data.title = fields.title;
     data.content = fields.content;
@@ -76,12 +77,8 @@ exports.post = function*(next) {
         }
     }
 
-
-//    article.save(function (err) {
-
-    //});
-
+    this.locals.message = 'Ваше событие добавлено!';
     this.status = 201;
-    this.body = '';
+    this.body = this.render('index', this.locals);
 };
 

@@ -2,7 +2,7 @@ extends /layouts/main
 
 
 block append head
-    // - !=js("event", {defer: true})
+    !=js("event", {defer: true})
 
 block content
 
@@ -15,6 +15,13 @@ block content
             +e.content= error
             +e('button').close(title="Закрыть")
 
+
+    if message
+        +b.notification._message._info.__message
+            +e.content= message
+            +e('button').close(title="Закрыть")
+
+
     +b("form").search-form(action="/event/add" method="POST")
         +e.content
             +e.line
@@ -23,6 +30,8 @@ block content
                 +e.input-wrap
                     +b.text-input._small.__input
                         +e('input').control#title(type="text" name="title" autofocus)
+
+                +e('div')#root
 
                 +e.label-wrap
                     +e('label').label(for="content") Описание

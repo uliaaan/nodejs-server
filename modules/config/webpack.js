@@ -69,8 +69,8 @@ module.exports = function(config) {
       auth:                      'auth/client',
       head:                      'client/head',
       tutorial:                  'tutorial/client',
-      footer:                    'client/footer'
-      
+      footer:                    'client/footer',
+      event:                      'event/client'
     },
 
     module: {
@@ -94,6 +94,11 @@ module.exports = function(config) {
           // babel would make all modules strict!
           exclude: /node_modules\/(angular|prismjs|moment|blueimp-canvas-to-blob|codemirror|markdown-it)/,
           loaders: ['ng-annotate', 'babel?presets[]=es2015'] // babel will work first
+        },
+        {
+          test: /\.jsx?$/,
+          loader: 'babel',
+          exclude: [/node_modules/, /public/]
         },
         {
           test:   /\.styl$/,
