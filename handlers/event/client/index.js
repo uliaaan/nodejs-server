@@ -5,7 +5,7 @@ import { Provider, } from 'react-redux';
 import { reducer as formReducer, } from 'redux-form';
 
 import App from './App.jsx';
-
+/*
 const reducer = combineReducers({
     form: formReducer,
 });
@@ -15,10 +15,9 @@ function configureStore(initialState) {
 }
 
 const store = configureStore({});
-
+*/
 render(
-<Provider store={ store }>
     <App />
-    </Provider>,
+,
     document.getElementById('root')
 );

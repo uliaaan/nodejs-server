@@ -39,7 +39,7 @@ class App extends Component {
 
         console.info('POST', body, data);
         console.info('This is expected to fail:');
-        fetch(`http://example.com/send/`, {
+        fetch(`/imgur/upload`, {
             method: 'POST',
             body: body,
         })
