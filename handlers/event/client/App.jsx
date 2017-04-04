@@ -32,16 +32,19 @@ class App extends Component {
     };
 
     onSubmit(data) {
+        /*
         var body = new FormData();
         Object.keys(data).forEach(( key ) => {
             body.append(key, data[ key ]);
         });
+        */
 
-        console.info('POST', body, data);
+        console.info('POST', JSON.stringify(data));
         console.info('This is expected to fail:');
-        fetch(`/imgur/upload`, {
+        fetch('/imgur/upload', {
             method: 'POST',
-            body: body,
+            headers: {'Content-Type': undefined },
+            data: body,
         })
             .then(res => res.json())
             .then(res => console.log(res))

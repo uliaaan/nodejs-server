@@ -46,6 +46,8 @@ var handlers = [
   
   'event',
 
+  'imgur',
+
   'tutorial'
 ];
 

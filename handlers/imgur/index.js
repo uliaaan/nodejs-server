@@ -6,7 +6,7 @@ exports.init = function(app){
 
     app.multipartParser.ignore.add('/imgur/upload');
 
-    app.use(mountHandlerMiddleware('imgur', __dirname));
+    app.use(mountHandlerMiddleware('/imgur', __dirname));
 
 };
 

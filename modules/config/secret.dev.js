@@ -7,8 +7,8 @@ module.exports = {
   // dev credentials
   imgur: {
     url:          'https://api.imgur.com/3/',
-    clientId:     '658726429918c83',
-    clientSecret: '9195ed91c629b9c933187d3eba8a4d0567ba4644',
+    clientId:     'e619b1ee6c8c692',
+    clientSecret: 'fa4acfca39501fd778b40882184bf6294e256a78',
     username: 'SchmidtNodeApp'
   }
 };
