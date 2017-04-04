@@ -24,7 +24,7 @@ exports.post = function*() {
 
       // multipart file must be the last
       form.on('part', function(part) {
-        self.log.debug("Part", part.name, part.filename);
+        console.log("Partttttttttttttttttttttt", JSON.stringify(part));
 
         if (!part.filename) {
           reject(new Error("No filename for form part " + part.name));

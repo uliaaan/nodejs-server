@@ -9,7 +9,10 @@ const renderDropzoneInput = (field) => {
     const files = field.input.value;
     return (
         <div>
-            <Dropzone name={field.name} onDrop={( filesToUpload, e ) => field.input.onChange(filesToUpload)}>
+            <Dropzone
+                name={field.name}
+                onDrop={( filesToUpload, e ) => field.input.onChange(filesToUpload)}
+            >
                 <div>Try dropping some files here, or click to select files to upload.</div>
             </Dropzone>
             {field.meta.touched &&
@@ -31,20 +34,17 @@ class App extends Component {
         reset: PropTypes.func.isRequired,
     };
 
-    onSubmit(data) {
-        /*
-        var body = new FormData();
-        Object.keys(data).forEach(( key ) => {
-            body.append(key, data[ key ]);
-        });
-        */
+    onSubmit(file) {
 
-        console.info('POST', JSON.stringify(data));
+        let formData = new FormData();
+        formData.append("photo", file);
+
+
+        console.info('POST', JSON.stringify(body));
         console.info('This is expected to fail:');
         fetch('/imgur/upload', {
             method: 'POST',
-            headers: {'Content-Type': undefined },
-            data: body,
+            data: formData,
         })
             .then(res => res.json())
             .then(res => console.log(res))
@@ -52,8 +52,10 @@ class App extends Component {
     }
 
     render() {
-        const {handleSubmit, reset} = this.props;
-
+        const {
+            handleSubmit,
+            reset,
+        } = this.props;
         return (
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div>
