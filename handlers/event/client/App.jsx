@@ -1,6 +1,7 @@
 import React, { Component, PropTypes, } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
+
 import Dropzone from 'react-dropzone';
 
 const FILE_FIELD_NAME = 'files';
@@ -34,18 +35,49 @@ class App extends Component {
         reset: PropTypes.func.isRequired,
     };
 
-    onSubmit(file) {
+    onSubmit(data) {
+        let  myHeaders = new Headers();
 
-        let formData = new FormData();
-        formData.append("photo", file);
+        var boundary = Date.now();
 
 
-        console.info('POST', JSON.stringify(body));
-        console.info('This is expected to fail:');
-        fetch('/imgur/upload', {
-            method: 'POST',
-            data: formData,
-        })
+        console.info('This is expected to fail:', data.files[0].name);
+
+
+        myHeaders.append('Content-Type', 'multipart/form-data; boundary=' + boundary);
+        myHeaders.append('Content-Disposition', 'form-data; name="photo"; filename="blob"'  );
+
+
+        myHeaders.append('Content-Disposition: form-data; name=' + data.files[0].name);
+
+
+
+        let myInit = { method: 'POST',
+            headers: myHeaders,
+            mode: 'cors',
+            cache: 'default' };
+
+        let myRequest = new Request('imgur/upload', myInit);
+        /*
+         var body = new FormData();
+
+
+
+         Object.keys(data).forEach(( key ) => {
+         console.info('POST', data[ key ]);
+         //if(key == "files")
+         body.append(key, data[ key ]);
+
+         });
+
+
+         */
+
+
+
+
+
+        fetch(myRequest)
             .then(res => res.json())
             .then(res => console.log(res))
             .catch(err => console.error(err));
