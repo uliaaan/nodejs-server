@@ -119,7 +119,7 @@ const schema = new Schema({
  * @param response
  * @returns {*}
  */
-schema.static.createFromResponse = function*(response){
+schema.statics.createFromResponse = function*(response) {
 
   if (!response.success) {
     throw new BadImageError(response.data.error);
@@ -129,13 +129,12 @@ schema.static.createFromResponse = function*(response){
   imgurImageData.imgurId = imgurImageData.id;
   delete imgurImageData.id;
 
-   let imgurImage = new ImgurImage(imgurImageData);
-   yield imgurImage.persist();
-   
-   return imgurImage;
+  var imgurImage = new ImgurImage(imgurImageData);
+  yield imgurImage.persist();
+  return imgurImage;
 };
 
 
 /* jshint -W003 */
-let ImgurImage = module.exports = mongoose.model("imgurImage", schema);
+let ImgurImage = module.exports = mongoose.model('imgurImage', schema);
 

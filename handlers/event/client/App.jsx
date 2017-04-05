@@ -67,7 +67,7 @@ class App extends Component {
          });*/
          
 
-          formData.append("file", data.files[0]);
+          formData.append("photo", data.files[0]);
 
 
         fetch('/imgur/upload',{

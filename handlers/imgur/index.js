@@ -1,6 +1,7 @@
 
-
 let mountHandlerMiddleware = require('lib/mountHandlerMiddleware');
+
+exports.imgurImage = require('./models/imgurImage');
 
 exports.init = function(app){
 

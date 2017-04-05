@@ -11,16 +11,16 @@ module.exports = function*(serviceName, options){
         json:    true
     }, options);
 
+    log.debug("response Options", JSON.stringify(options));
+
     let response = yield function(callback) {
     request(options, function(error, response) {
       callback(error, response);
     });
-  };    
+  };
+    log.debug("response Imgur", JSON.stringify(response ));
 
-  log.debug("response Imgur", JSON.stringify(options));
-
-    if(response.status != 200 && response.statusCode != 400){
-        log.error("Imgur error", {res: response});
+    if(response.body.status != 200 && response.statusCode != 400){
         throw new Error("Error communicating with imgur service.");
     }
 
