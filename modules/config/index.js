@@ -38,6 +38,8 @@ var config = module.exports = {
 
   mongoose: require('./mongoose'),
 
+  secret_dev: require('./secret.dev'),
+
   appKeys:  [secret.sessionKey],
   adminKey: secret.adminKey,
 

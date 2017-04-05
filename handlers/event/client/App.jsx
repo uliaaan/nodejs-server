@@ -10,10 +10,7 @@ const renderDropzoneInput = (field) => {
     const files = field.input.value;
     return (
         <div>
-            <Dropzone
-                name={field.name}
-                onDrop={( filesToUpload, e ) => field.input.onChange(filesToUpload)}
-            >
+            <Dropzone name={field.name} onDrop={( filesToUpload, e ) => field.input.onChange(filesToUpload)}>
                 <div>Try dropping some files here, or click to select files to upload.</div>
             </Dropzone>
             {field.meta.touched &&
@@ -36,6 +33,7 @@ class App extends Component {
     };
 
     onSubmit(data) {
+         /*
         let  myHeaders = new Headers();
 
         var boundary = Date.now();
@@ -58,26 +56,26 @@ class App extends Component {
             cache: 'default' };
 
         let myRequest = new Request('imgur/upload', myInit);
-        /*
-         var body = new FormData();
+       */
+         var formData = new FormData();
+        
+         
+         console.info('This is expected to fail:', data.files[0]);
+         /*Object.keys(data).forEach(( key ) => {
+             console.info('This is expected to fail:', JSON.stringify(data[ key ]));
+            body.append(key, JSON.stringify(data[ key ]));
+         });*/
+         
+
+          formData.append("file", data.files[0]);
 
 
-
-         Object.keys(data).forEach(( key ) => {
-         console.info('POST', data[ key ]);
-         //if(key == "files")
-         body.append(key, data[ key ]);
-
-         });
-
-
-         */
-
-
-
-
-
-        fetch(myRequest)
+        fetch('/imgur/upload',{
+            method: 'POST',
+            //headers: {'content-disposition': 'form-data; name="photo"; filename="blob"' },
+            body: formData
+            
+            })
             .then(res => res.json())
             .then(res => console.log(res))
             .catch(err => console.error(err));

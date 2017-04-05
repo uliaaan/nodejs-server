@@ -6,8 +6,8 @@ const log = require('log')();
 module.exports = function*(serviceName, options){
     options = Object.assign({
         method:  'POST',
-        url:     config.imgur.url + serviceName,
-        headers: {'Authorization': 'Client-ID ' + config.imgur.clientId},
+        url:     config.secret_dev.imgur.url + serviceName,
+        headers: {'Authorization': 'Client-ID ' + config.secret_dev.imgur.clientId},
         json:    true
     }, options);
 
@@ -15,7 +15,9 @@ module.exports = function*(serviceName, options){
     request(options, function(error, response) {
       callback(error, response);
     });
-  };
+  };    
+
+  log.debug("response Imgur", JSON.stringify(options));
 
     if(response.status != 200 && response.statusCode != 400){
         log.error("Imgur error", {res: response});

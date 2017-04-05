@@ -1,0 +1,39 @@
+block content
+  
+ -    +b.event-info
+ -        +e.header
+ -            +e('h2').header-title Добавление события
+ -
+ -    if error
+ -        +b.notification._message._error.__message
+ -            +e.content= error
+ -            +e('button').close(title="Закрыть")
+ -
+ -
+ -    if message
+ -        +b.notification._message._info.__message
+ -            +e.content= message
+ -            +e('button').close(title="Закрыть")
+ -
+ -
+ -    +b("form").search-form()
+ -        +e.content
+ -            +e.line
+ -                +e.label-wrap
+ -                    +e('label').label(for="title") Заголовок
+ -                +e.input-wrap
+ -                    +b.text-input._small.__input
+ -                        +e('input').control#title(type="text" name="title" autofocus)
+ -
+ -                +e('div')#root
+ -
+ -                +e.label-wrap
+ -                    +e('label').label(for="content") Описание
+ -                +e('dt').input-label
+ -                    +e('textarea').control-area(type="text", name="content" rows="10" cols="46" id="content")
+ -
+ -
+ -                +e.save-wrap
+ -                    +b('button').button._action.__save
+ -                        +e('text') Добавить
+ +    +e('div')#root
