@@ -11,7 +11,7 @@ exports.mustNotBeAuthenticated = require('./lib/mustNotBeAuthenticated');
 
 exports.init = function(app){
 
-   require('./strategies');
+    require('./strategies');
 
     app.use(mountHandlerMiddleware('/auth', __dirname));
 

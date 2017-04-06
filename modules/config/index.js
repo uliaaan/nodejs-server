@@ -55,6 +55,14 @@ var config = module.exports = {
     cache:   env.NODE_ENV != 'development'
   },
 
+  crypto: {
+    hash:{
+       length:     128,
+       // may be slow(!): iterations = 12000 take ~60ms to generate strong password
+       iterations: env.NODE_ENV == 'development' || env.NODE_ENV == 'test' ? 1 : 12000
+    }
+  },
+
   projectRoot:           process.cwd(),
   // public files, served by nginx
   publicRoot:            path.join(process.cwd(), 'public'),
