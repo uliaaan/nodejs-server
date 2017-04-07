@@ -24,8 +24,10 @@ const clientRender = require('client/clientRender');
  */
 class AuthForm {
 
+
     constructor(options) {
         this.options = options;
+        this.showInputError;
     }
 
 
@@ -57,6 +59,21 @@ class AuthForm {
     }
 
 
+    clearFormMessages() {
+
+        [].forEach.call(this.elem.querySelectorAll('.text-input_invalid'), function(elem) {
+            elem.classList.remove('text-input_invalid');
+        });
+
+        [].forEach.call(this.elem.querySelectorAll('.text-input__err'), function(elem) {
+            elem.remove();
+        });
+
+        // clear form-wide notification
+        this.elem.querySelector('[data-notification]').innerHTML = '';
+    }
+
+
     startRequestIndication() {
         this.elem.classList.add('modal-overlay_light');
         let self = this;
@@ -80,6 +97,7 @@ class AuthForm {
 
     }
 
+
     initEventHandlers() {
         this.delegate('[data-switch="register-form"]', 'click', function(event) {
             event.preventDefault();
@@ -97,17 +115,92 @@ class AuthForm {
             this.submitRegisterForm(event.target);
 
         });
-
-
     }
+
 
     submitRegisterForm(form) {
 
+        this.clearFormMessages();
+
+        let hasError = false;
+
+        if (!form.elements.email.value) {
+            hasError = true;
+            this.showInputError(form.email, 'Введите, пожалуста, email.');
+        }
+
+        if (!form.elements.displayName.value) {
+            hasErrors = true;
+            this.showInputError(form.elements.displayName, 'Введите, пожалуста, имя пользователя.');
+        }
+
+        if (!form.elements.password.value) {
+            hasErrors = true;
+            this.showInputError(form.elements.password, 'Введите, пожалуста, пароль.');
+        }
 
 
+        if (hasError) return
+
+        let payload = new FormData(form);
+        payload.append("successRedirect", this.options.successRedirect);
+
+        let request = this.request({
+            method: "POST",
+            url: 'auth/register',
+            normalStatuses: [201, 400],
+            body: payload
+        });
 
 
+        let self = this;
+        request.addEventListener('success', function(event) {
+            console.log(event);
+
+            if (this.status == 201) {
+                self.elem.innerHTML = clientRender(loginForm, self.options);
+                self.showFormMessage({
+                    html: "<p>С адреса notify@javascript.ru отправлено письмо со ссылкой-подтверждением.</p>" +
+                        "<p><a href='#' data-action-verify-email='" + form.elements.email.value + "'>перезапросить подтверждение.</a></p>",
+                    type: 'success'
+                });
+                return;
+            }
+
+            if (this.status == 400) {
+                for (var field in event.result.errors) {
+                    self.showInputError(form.elements[field], event.result.errors[field]);
+                }
+                return;
+            }
+
+            self.showFormMessage({ html: "Неизвестный статус ответа сервера", type: 'error' });
+        });
     }
+
+
+    showFormMessage(message) {
+
+        let html = message.html;
+
+        if (html.indexOf('<p>') !== 0) {
+            html = '<p>' + html + '</p>';
+        }
+
+        let type = message.type;
+
+        if (['info', 'error', 'warning', 'success'].indexOf(type) == -1) {
+            throw new Error("Unsupported type: " + type);
+        }
+
+        let container = document.createElement('div');
+        container.className = 'login-form__' + type;
+        container.innerHTML = html;
+
+        this.elem.querySelector('[data-notification]').innerHTML = '';
+        this.elem.querySelector('[data-notification]').initEventHandlers = container;
+    }
+
 
 
 }
