@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
+const Schema = mongoose.Schema;
 const co = require('co');
 const transliterate = require('textUtil/transliterate');
 const validate = require('validate');
@@ -13,16 +13,15 @@ const UserSchema = new Schema({
         type: String,
         trim: true,
         default: "", // need a value for validator to run
-        validate: [
-            {
-                validator: function () {
+        validate: [{
+                validator: function() {
                     //console.log("VALIDATING", this.deleted, value, this.deleted ? true : (value.length > 0));
                     return this.deleted ? true : (value.length >= 2);
                 },
                 msg: "Имя пользователя должно иметь не менее 2 символов."
             },
             {
-                validator: function (value) {
+                validator: function(value) {
                     if (!value) return true;
                     return value.length <= 256;
                 },
@@ -37,8 +36,7 @@ const UserSchema = new Schema({
         trim: true,
         lowercase: true,
         default: "", // need a value for validator to run
-        validate: [
-            {
+        validate: [{
                 validator: function checkNonEmpty(value) {
                     return this.deleted ? true : (value.length) > 0;
 
@@ -81,9 +79,8 @@ const UserSchema = new Schema({
 
     profileName: {
         type: String,
-        validate: [
-            {
-                validator: function (value) {
+        validate: [{
+                validator: function(value) {
                     // also checks required
                     if (this.deleted) return true;
                     return value && value.length >= 2;
@@ -92,14 +89,14 @@ const UserSchema = new Schema({
             },
 
             {
-                validator: function (value) {
+                validator: function(value) {
                     return this.deleted || /^[a-z0-9-]*$/.test(value);
                 },
                 msg: "В имени профиля допустимы только буквы a-z, цифры и дефис."
             },
 
             {
-                validator: function (value) {
+                validator: function(value) {
                     // if no value, this validator passes (another one triggers the error)
                     return this.deleted || !value || value.length <= 64;
                 },
@@ -128,7 +125,7 @@ const UserSchema = new Schema({
         trim: true
     },
 
-    verifiedEmail{
+    verifiedEmail: {
         type: Boolean,
         default: false
     },
@@ -159,7 +156,7 @@ const UserSchema = new Schema({
     },
     verifyEmailRedirect: String, // where to redirect after verify
 
-    passwordResetToken: {  // refresh with each recovery request
+    passwordResetToken: { // refresh with each recovery request
         type: String,
         index: true
     },
@@ -186,7 +183,7 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false
     },
-    readOnly: Boolean,  // data is not deleted, just flagged as banned
+    readOnly: Boolean, // data is not deleted, just flagged as banned
     roles: { // admin, teacher, qaModerator?
         type: [{
             type: String,
@@ -198,11 +195,11 @@ const UserSchema = new Schema({
     },
 
     lastActivity: Date
-    /* created, modified from plugin */
+        /* created, modified from plugin */
 });
 
 UserSchema.virtual('password')
-    .set(function (password) {
+    .set(function(password) {
 
         if (password !== undefined) {
             if (password.length < 4) {
@@ -221,17 +218,17 @@ UserSchema.virtual('password')
             this.passwordHash = undefined;
         }
     })
-    .get(function () {
+    .get(function() {
         return this._plainPassword;
     });
 
 // get all fields available to a visitor (except the secret/internal ones)
 // normally in-page JS has access to these
-UserSchema.methods.getInfoFields = function () {
+UserSchema.methods.getInfoFields = function() {
     return User.getInfoFields(this);
 };
 
-UserSchema.statics.getInfoFields = function (user) {
+UserSchema.statics.getInfoFields = function(user) {
     return {
         id: user._id,
         hasPassword: Boolean(user.passwordHash),
@@ -257,11 +254,11 @@ UserSchema.statics.getInfoFields = function (user) {
     };
 };
 
-UserSchema.methods.getProfileUrl = function () {
+UserSchema.methods.getProfileUrl = function() {
     return `/profile/${this.profileName}`;
 }
 
-UserSchema.methods.checkPassword = function (password) {
+UserSchema.methods.checkPassword = function(password) {
     if (!password) return false; // empty password means no login by password
     if (!this.passwordHash) return false; // this user does not have password (the line below would hang!)
 
@@ -271,7 +268,7 @@ UserSchema.methods.checkPassword = function (password) {
 UserSchema.statics.photoDefault = '//i.imgur.com/zSGftLc.png';
 UserSchema.statics.photoDeleted = '//i.imgur.com/7KZD6XK.png';
 
-UserSchema.methods.getPhotoUrl = function (width, height) {
+UserSchema.methods.getPhotoUrl = function(width, height) {
     let url = this.deleted ? User.photoDeleted : !this.photo ? User.photoDefault : this.photo;
 
     if (!width && !height) return url;
@@ -281,18 +278,18 @@ UserSchema.methods.getPhotoUrl = function (width, height) {
 
     let modifier = (width <= 80 && height < 80) ? 't' :
         (width <= 160 && height <= 160) ? 'm' :
-            (width <= 320 && height <= 320) ? 'i' :
-                (width <= 512 && height <= 512) ? 'h' : '';
+        (width <= 320 && height <= 320) ? 'i' :
+        (width <= 512 && height <= 512) ? 'h' : '';
 
     return url.slice(0, url.lastIndexOf('.')) + modifier + url.slice(url.lastIndexOf('.'));
 
 }
 
 
-UserSchema.methods.generateProfileName = function* () {
+UserSchema.methods.generateProfileName = function*() {
     let profileName = this.displayName.trim()
         .toLowerCase()
-        .replace(/<\/?[a-z].*?>/gim, '')  // strip tags, leave /<DIGIT/ like: "IE<123"
+        .replace(/<\/?[a-z].*?>/gim, '') // strip tags, leave /<DIGIT/ like: "IE<123"
         .replace(/[ \t\n!"#$%&'()*+,\-.\/:;<=>?@[\\\]^_`{|}~]/g, '-') // пунктуация, пробелы -> дефис
         .replace(/[^a-zа-яё0-9-]/gi, '') // убрать любые символы, кроме [слов цифр дефиса])
         .replace(/-+/gi, '-') // слить дефисы вместе
@@ -320,25 +317,25 @@ UserSchema.methods.generateProfileName = function* () {
 }
 
 UserSchema.pre('save', function(next) {
-  if (this.deleted || this.profileName) return next();
+    if (this.deleted || this.profileName) return next();
 
-  co(function*() {
-    yield* this.generateProfileName();
-  }.bind(this)).then(next, next);
+    co(function*() {
+        yield* this.generateProfileName();
+    }.bind(this)).then(next, next);
 });
 
 
 
 UserSchema.pre('save', function(next) {
-  if (this.aboutMe) this.aboutMe = this.aboutMe.slice(0, 600);
+    if (this.aboutMe) this.aboutMe = this.aboutMe.slice(0, 600);
 
-  if (this.city) {
-    this.city = ucWordStart(this.city);
-  }
-  if (this.country) {
-    this.country = ucWordStart(this.country);
-  }
-  next();
+    if (this.city) {
+        this.city = ucWordStart(this.city);
+    }
+    if (this.country) {
+        this.country = ucWordStart(this.country);
+    }
+    next();
 });
 
 
