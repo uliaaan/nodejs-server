@@ -4233,9 +4233,230 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
-  "nextFreeModuleId": 1044,
+  "nextFreeModuleId": 1051,
   "modules": {
     "byIdentifier": {
       "node_modules/jade-loader/stringify.loader.js!handlers/auth/templates/providers.jade": 1,
@@ -5334,7 +5555,14 @@
       "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/path-browserify/index.js": 1040,
       "node_modules/jade-loader/index.js?root=/home/jumbot/javascript-tutorial-server/templates!handlers/auth/templates/login-form.jade": 1041,
       "ignored /home/jumbot/javascript-tutorial-server/node_modules/jade/lib fs": 1042,
-      "node_modules/jade-loader/index.js?root=/home/jumbot/javascript-tutorial-server/templates!handlers/auth/templates/registerForm.jade": 1043
+      "node_modules/jade-loader/index.js?root=/home/jumbot/javascript-tutorial-server/templates!handlers/auth/templates/registerForm.jade": 1043,
+      "node_modules/jade-loader/index.js?root=/home/jumbot/javascript-nodejs/templates!handlers/auth/templates/login-form.jade": 1044,
+      "ignored /home/jumbot/javascript-nodejs/node_modules/jade/lib fs": 1045,
+      "node_modules/jade-loader/index.js?root=/home/jumbot/javascript-nodejs/templates!handlers/auth/templates/registerForm.jade": 1046,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/factory.js": 1047,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/lib/ReactPropTypesSecret.js": 1048,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/checkPropTypes.js": 1049,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react/lib/getNextDebugID.js": 1050
     }
   },
   "nextFreeChunkId": 26,

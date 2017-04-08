@@ -78,6 +78,22 @@ function addStandardHelpers(locals, ctx) {
       );
   };
 
+  Object.defineProperty(locals, "user", {
+    get: function() {
+      return ctx.req.user;
+    }
+  });
+
+
+  // flash middleware may be attached later in the chain
+  Object.defineProperties(locals, "flashMessages", {
+    get: function() {
+      return ctx.flash && ctx.flash.messages;
+    }
+  });
+
+
+
   locals.markit = function(text, options) {
     return new BasicParser(options).render(text);
   };

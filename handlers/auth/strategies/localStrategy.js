@@ -13,6 +13,7 @@ function UserAuthError(message){
 module.exports = new LocalStrategy({usernameField: 'email', passwordField: 'password'}, function(email, password, done){
 
 
+
  co(function*(){
 
     if(!email)  throw new UserAuthError('Укажите email.');
