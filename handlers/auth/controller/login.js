@@ -10,12 +10,12 @@ exports.get = function*() {
         this.redirect('/');
         return;
     }
-    
-        this.locals.authOptions = {
-            successRedirect:  '/',
-            message: this.flash.message && this.flash.message[0]        
-        };
-    
+
+    this.locals.authOptions = {
+        successRedirect: this.flash.successRedirect || '/',
+        message: this.flash.messages && this.flash.messages[0]
+    };
+
     this.body = this.render('login');
 
 };
