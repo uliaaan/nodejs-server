@@ -13,7 +13,7 @@ const session = require('koa-generic-session');
 const mongooseStore = require('koa-session-mongoose');
 const config = require('config');
 
-exports.init = function*(next) {
+exports.init = function(app) {
 
     let options = {
         store: mongooseStore.create({
@@ -26,7 +26,7 @@ exports.init = function*(next) {
     let dataParams = Object.assign({}, options, config.auth.session);
 
     app.use(session(dataParams));
-    app.key = config.appKeys;
+    app.keys = config.appKeys;  // needed for cookie-signing
 
 };
 

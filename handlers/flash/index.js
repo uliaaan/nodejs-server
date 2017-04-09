@@ -1,12 +1,12 @@
 /**
  * FLASH MIDDLEWARE
  */
-exports.init = function* (next) {
+exports.init = function(app) {
     // koa-flash is broken
     // reading from one object, writing to another object
     // occasionally writing to default
 
-    app.use(function* flash(next) {
+    app.use(function *flash(next) {
 
         // this.flash is the previous flash
         this.flash = this.session.flash || {};
@@ -16,14 +16,15 @@ exports.init = function* (next) {
         // this.newFlash is an accessor to the new flash
         this.session.flash = {};
 
-        Object.defineProperties(this, "newFlash", {
-            get: function () {
+        Object.defineProperty(this, 'newFlash', {
+            get: function() {
                 return this.session.flash;
             },
-            set: function (val) {
+            set: function(val) {
                 this.session.flash = val;
             }
         });
+
 
         yield* next;
 

@@ -30,7 +30,7 @@ class AuthForm {
         this.showInputError;
 
         if (!options.successRedirect) {
-            options.successRedirect = window.STATUS_CODE < 300 ? window.location.href : '/';
+            options.successRedirect = window.location.href;
         }
     }
 
@@ -152,7 +152,7 @@ class AuthForm {
         }
 
 
-        if (hasError) return
+        if (hasError) return;
 
         let payload = new FormData(form);
         payload.append("successRedirect", this.options.successRedirect);
