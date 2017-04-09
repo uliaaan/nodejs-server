@@ -43,7 +43,7 @@ exports.init = function(app) {
 
     });
 
-    app.use(function* () {
+    app.use(function* (next) {
 
         let notificationTypes = ["error", "warning", "info", "success"];
 
