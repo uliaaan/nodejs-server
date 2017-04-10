@@ -126,10 +126,14 @@ class AuthForm {
             event.preventDefault();
 
             this.submitRegisterForm(event.target);
+        });
 
+        this.delegate('[data-form="login"]', 'submit', function(event) {
+            event.preventDefault();
+
+            this.submitLoginForm(event.target);
         });
     }
-
 
     submitRegisterForm(form) {
 
@@ -195,6 +199,60 @@ class AuthForm {
     }
 
 
+    submitLoginForm(form) {
+        this.clearFormMessages();
+
+        let hasErrors = false;
+
+        if (!form.elements.email.value) {
+            hasErrors = true;
+            this.showFormMessage(form.elements.email, 'Введите, пожалуста, email.');
+        }
+
+        if (!form.elements.password.value) {
+            hasErrors = true;
+            this.showFormMessage(form.elements.password, 'Введите, пожалуста, пароль.');
+        }
+
+        if (hasErrors) return;
+
+        let dataform = new FormData(form);
+        let request = xhr({
+            method: "POST",
+            url: '/auth/login/local',
+            noDocumentEvents: true, // we handle all events/errors in this code
+            normalStatuses: [200, 401],
+            body: dataform
+        });
+
+        let onEnd = this.startRequestIndication();
+
+        request.addEventListener('success', (event) => {
+
+            if (this.status == 401) {
+                onEnd();
+                this.onAuthFailure(event.result.message);
+                return;
+            }
+
+            // don't stop progress indication if login successful && we're making redirect
+            if (!this.options.callback) {
+                this.onAuthSuccess(event.result.user);
+            } else {
+                onEnd();
+                this.onAuthSuccess(event.result.user);
+            }
+
+        });
+
+        request.addEventListener("fail", (event) => {
+            onEnd();
+            this.onAuthFailure(event.reason);
+        });
+
+    }
+
+
     showFormMessage(message) {
 
         let html = message.html;
@@ -217,6 +275,25 @@ class AuthForm {
         this.elem.querySelector('[data-notification]').initEventHandlers = container;
     }
 
+
+    /*
+     * все обработчики авторизации (включая Facebook из popup-а и локальный)
+     * в итоге триггерят один из этих каллбэков
+     */
+    onAuthSuccess(user) {
+        window.currentUser = user;
+        if (this.options.callback) {
+            this.options.callback();
+        } else {
+            this.successRedirect();
+        }
+    }
+
+
+
+    onAuthFailure(errorMessage) {
+        this.showFormMessage({ html: errorMessage || "Отказ в авторизации.", type: 'error' });
+    }
 
 
 }
