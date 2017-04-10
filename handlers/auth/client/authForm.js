@@ -49,19 +49,19 @@ class AuthForm {
         return this.elem;
     }
 
-    	
-  successRedirect() {
-    if(window.location.href === this.options.successRedirect){
-        window.location.reload();
-    }else{
-        window.location.href = this.options.successRedirect;
+
+    successRedirect() {
+        if (window.location.href === this.options.successRedirect) {
+            window.location.reload();
+        } else {
+            window.location.href = this.options.successRedirect;
+        }
     }
-  }
 
     request(options) {
         let request = xhr(options);
 
-        request.addEventListener('loadstart', function () {
+        request.addEventListener('loadstart', function() {
             let onEnd = this.startRequestIndication();
             request.addEventListener('loadend', onEnd);
 
@@ -73,11 +73,11 @@ class AuthForm {
 
     clearFormMessages() {
 
-        [].forEach.call(this.elem.querySelectorAll('.text-input_invalid'), function (elem) {
+        [].forEach.call(this.elem.querySelectorAll('.text-input_invalid'), function(elem) {
             elem.classList.remove('text-input_invalid');
         });
 
-        [].forEach.call(this.elem.querySelectorAll('.text-input__err'), function (elem) {
+        [].forEach.call(this.elem.querySelectorAll('.text-input__err'), function(elem) {
             elem.remove();
         });
 
@@ -89,6 +89,7 @@ class AuthForm {
     startRequestIndication() {
         this.elem.classList.add('modal-overlay_light');
         let self = this;
+        let spinner;
 
         let submitButton = this.elem.querySelector('[type="submit"]');
 
@@ -111,19 +112,19 @@ class AuthForm {
 
 
     initEventHandlers() {
-        this.delegate('[data-switch="register-form"]', 'click', function (event) {
+        this.delegate('[data-switch="register-form"]', 'click', function(event) {
             event.preventDefault();
             this.elem.innerHTML = clientRender(registerForm, this.options);
         });
 
-        this.delegate('[data-switch="login-form"]', 'click', function (event) {
+        this.delegate('[data-switch="login-form"]', 'click', function(event) {
             event.preventDefault();
             this.elem.innerHTML = clientRender(loginForm, this.options);
         });
 
-        this.delegate('[data-form="register"]', 'submit', function (event) {
+        this.delegate('[data-form="register"]', 'submit', function(event) {
             event.preventDefault();
-            console.log(event.target);
+
             this.submitRegisterForm(event.target);
 
         });
@@ -159,21 +160,24 @@ class AuthForm {
 
         let request = this.request({
             method: "POST",
-            url: 'auth/register',
+            url: '/auth/register',
             normalStatuses: [201, 400],
             body: payload
         });
 
 
+        /**
+         * Wait XMLHttpRequest event 
+         * Object "Event" XMLHttpRequest
+         */
         let self = this;
-        request.addEventListener('success', function (event) {
-            console.log(event);
+        request.addEventListener('success', function(event) {
 
             if (this.status == 201) {
                 self.elem.innerHTML = clientRender(loginForm, self.options);
                 self.showFormMessage({
                     html: "<p>С адреса notify@javascript.ru отправлено письмо со ссылкой-подтверждением.</p>" +
-                    "<p><a href='#' data-action-verify-email='" + form.elements.email.value + "'>перезапросить подтверждение.</a></p>",
+                        "<p><a href='#' data-action-verify-email='" + form.elements.email.value + "'>перезапросить подтверждение.</a></p>",
                     type: 'success'
                 });
                 return;

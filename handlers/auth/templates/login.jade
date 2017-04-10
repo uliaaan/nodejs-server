@@ -9,10 +9,10 @@ block append variables
 
 
 block append head
-    !=js("auth", {defer: true}) 
+      !=js("auth", {defer: true})
 
 block content
 
-    script window.authOptions != {escapeJSON(authOptions)}
+    script window.authOptions = !{escapeJSON(authOptions)}
 
     div#auth-form     

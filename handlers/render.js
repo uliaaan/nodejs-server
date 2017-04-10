@@ -20,213 +20,220 @@ const BasicParser = require('markit').BasicParser;
 var publicVersions;
 
 function getPublicVersion(publicPath) {
-  if (!publicVersions) {
-    // don't include at module top, let the generating task to finish
-    publicVersions = require(path.join(config.projectRoot, 'public.versions.json'));
-  }
-  var busterPath = publicPath.slice(1);
-  return publicVersions[busterPath];
+    if (!publicVersions) {
+        // don't include at module top, let the generating task to finish
+        publicVersions = require(path.join(config.projectRoot, 'public.versions.json'));
+    }
+    var busterPath = publicPath.slice(1);
+    return publicVersions[busterPath];
 }
 
 function addStandardHelpers(locals, ctx) {
-  // same locals may be rendered many times, let's not add helpers twice
-  if (locals._hasStandardHelpers) return;
+    // same locals may be rendered many times, let's not add helpers twice
+    if (locals._hasStandardHelpers) return;
 
-  locals.moment = moment;
+    locals.moment = moment;
 
-  locals.lang = config.lang;
+    locals.lang = config.lang;
 
-  locals.url = url.parse(ctx.protocol + '://' + ctx.host + ctx.originalUrl);
-  locals.context = ctx;
+    locals.url = url.parse(ctx.protocol + '://' + ctx.host + ctx.originalUrl);
+    locals.context = ctx;
 
-  locals.livereloadEnabled = true;
+    locals.livereloadEnabled = true;
 
-  locals.js = function(name, options) {
-    options = options || {};
+    locals.js = function(name, options) {
+        options = options || {};
 
-    let src = locals.pack(name, 'js');
+        let src = locals.pack(name, 'js');
 
-    let attrs = options.defer ? ' defer' : '';
+        let attrs = options.defer ? ' defer' : '';
 
-    return `<script src="${src}"${attrs}></script>`;
-  };
+        return `<script>
+      if (~navigator.userAgent.toLowerCase().indexOf('firefox')) document.write('<script src="${src}" type="application/javascript;version=1.8"${attrs}><\\/script>');
+      else document.write('<script src="${src}"${attrs}><\\/script>');
+      </script>
+    `;
+    };
 
 
-  locals.css = function(name) {
-    let src = locals.pack(name, 'css');
+    locals.css = function(name) {
+        let src = locals.pack(name, 'css');
 
-    return `<link href="${src}" rel="stylesheet">`;
-  };
+        return `<link href="${src}" rel="stylesheet">`;
+    };
 
-  locals.env = process.env;
+    // we don't use defer in sessions, so can assign it
+    // (simpler, need to call yield this.session)
+    locals.session = ctx.session;
 
-  locals.pluralize = pluralize;
-  locals.domain = config.domain;
+    locals.env = process.env;
 
-  // replace lone surrogates in json, </script> -> <\/script>
-  locals.escapeJSON = function(s) {
-    var json = JSON.stringify(s);
-    return json.replace(/\//g, '\\/')
-      .replace(/[\u003c\u003e]/g,
-        function(c) {
-          return '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4).toUpperCase();
+    locals.pluralize = pluralize;
+    locals.domain = config.domain;
+
+    // replace lone surrogates in json, </script> -> <\/script>
+    locals.escapeJSON = function(s) {
+        var json = JSON.stringify(s);
+        return json.replace(/\//g, '\\/')
+            .replace(/[\u003c\u003e]/g,
+                function(c) {
+                    return '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4).toUpperCase();
+                }
+            ).replace(/[\u007f-\uffff]/g,
+                function(c) {
+                    return '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4);
+                }
+            );
+    };
+
+    Object.defineProperty(locals, "user", {
+        get: function() {
+            return ctx.req.user;
         }
-      ).replace(/[\u007f-\uffff]/g,
-        function(c) {
-          return '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4);
+    });
+
+
+    // flash middleware may be attached later in the chain
+    Object.defineProperty(locals, "flashMessages", {
+        get: function() {
+            return ctx.flash && ctx.flash.messages;
         }
-      );
-  };
-
-  Object.defineProperty(locals, "user", {
-    get: function() {
-      return ctx.req.user;
-    }
-  });
+    });
 
 
-  // flash middleware may be attached later in the chain
-  Object.defineProperty(locals, "flashMessages", {
-    get: function() {
-      return ctx.flash && ctx.flash.messages;
-    }
-  });
+    locals.markit = function(text, options) {
+        return new BasicParser(options).render(text);
+    };
+
+    locals.markitInline = function(text, options) {
+        return new BasicParser(options).renderInline(text);
+    };
+
+    locals.t = t;
+    locals.bem = require('bemJade')();
+
+    locals.pack = function(name, ext) {
+        var versions = JSON.parse(
+            fs.readFileSync(path.join(config.manifestRoot, 'pack.versions.json'), { encoding: 'utf-8' })
+        );
+        var versionName = versions[name];
+        // e.g style = [ style.js, style.js.map, style.css, style.css.map ]
+
+        if (!Array.isArray(versionName)) return versionName;
+
+        var extTestReg = new RegExp(`.${ext}\\b`);
+
+        // select right .js\b extension from files
+        for (var i = 0; i < versionName.length; i++) {
+            var versionNameItem = versionName[i]; // e.g. style.css.map
+            if (/\.map/.test(versionNameItem)) continue; // we never need a map
+            if (extTestReg.test(versionNameItem)) return versionNameItem;
+        }
+
+        throw new Error(`Not found pack name:${name} ext:${ext}`);
+        /*
+         if (process.env.NODE_ENV == 'development') {
+         // webpack-dev-server url
+         versionName = process.env.STATIC_HOST + ':' + config.webpack.devServer.port + versionName;
+         }*/
+
+    };
 
 
-
-  locals.markit = function(text, options) {
-    return new BasicParser(options).render(text);
-  };
-
-  locals.markitInline = function(text, options) {
-    return new BasicParser(options).renderInline(text);
-  };
-
-  locals.t = t;
-  locals.bem = require('bemJade')();
-
-  locals.pack = function(name, ext) {
-    var versions = JSON.parse(
-      fs.readFileSync(path.join(config.manifestRoot, 'pack.versions.json'), {encoding: 'utf-8'})
-    );
-    var versionName = versions[name];
-    // e.g style = [ style.js, style.js.map, style.css, style.css.map ]
-
-    if (!Array.isArray(versionName)) return versionName;
-
-    var extTestReg = new RegExp(`.${ext}\\b`);
-
-    // select right .js\b extension from files
-    for (var i = 0; i < versionName.length; i++) {
-      var versionNameItem = versionName[i]; // e.g. style.css.map
-      if (/\.map/.test(versionNameItem)) continue; // we never need a map
-      if (extTestReg.test(versionNameItem)) return versionNameItem;
-    }
-
-    throw new Error(`Not found pack name:${name} ext:${ext}`);
-    /*
-     if (process.env.NODE_ENV == 'development') {
-     // webpack-dev-server url
-     versionName = process.env.STATIC_HOST + ':' + config.webpack.devServer.port + versionName;
-     }*/
-
-  };
-
-
-  locals._hasStandardHelpers = true;
+    locals._hasStandardHelpers = true;
 }
 
 
 // (!) this.render does not assign this.body to the result
 // that's because render can be used for different purposes, e.g to send emails
 exports.init = function(app) {
-  app.use(function *(next) {
-    var ctx = this;
+    app.use(function*(next) {
+        var ctx = this;
 
-    var renderFileCache = {};
+        var renderFileCache = {};
 
-    this.locals = Object.assign({}, config.jade);
+        this.locals = Object.assign({}, config.jade);
 
-    /**
-     * Render template
-     * Find the file:
-     *   if locals.useAbsoluteTemplatePath => use templatePath
-     *   else if templatePath starts with /   => lookup in locals.basedir
-     *   otherwise => lookup in this.templateDir (MW should set it)
-     * @param templatePath file to find (see the logic above)
-     * @param locals
-     * @returns {String}
-     */
-    this.render = function(templatePath, locals) {
+        /**
+         * Render template
+         * Find the file:
+         *   if locals.useAbsoluteTemplatePath => use templatePath
+         *   else if templatePath starts with /   => lookup in locals.basedir
+         *   otherwise => lookup in this.templateDir (MW should set it)
+         * @param templatePath file to find (see the logic above)
+         * @param locals
+         * @returns {String}
+         */
+        this.render = function(templatePath, locals) {
 
-      // add helpers at render time, not when middleware is used time
-      // probably we will have more stuff initialized here
-      addStandardHelpers(this.locals, this);
+            // add helpers at render time, not when middleware is used time
+            // probably we will have more stuff initialized here
+            addStandardHelpers(this.locals, this);
 
-      // warning!
-      // Object.assign does NOT copy defineProperty
-      // so I use this.locals as a root and merge all props in it, instead of cloning this.locals
-      var loc = Object.create(this.locals);
+            // warning!
+            // Object.assign does NOT copy defineProperty
+            // so I use this.locals as a root and merge all props in it, instead of cloning this.locals
+            var loc = Object.create(this.locals);
 
-      Object.assign(loc, locals);
+            Object.assign(loc, locals);
 
-      if (!loc.schema) {
-        loc.schema = {};
-      }
-
-
-      if (!loc.canonicalPath) {
-        // strip query
-        loc.canonicalPath = this.request.originalUrl.replace(/\?.*/, '');
-        // /intro/   -> /intro
-        loc.canonicalPath = loc.canonicalPath.replace(/\/+$/, '');
-      }
-
-      loc.canonicalUrl = config.server.siteHost + loc.canonicalPath;
-
-      var templatePathResolved = resolvePath(templatePath, loc);
-      this.log.debug("render file " + templatePathResolved);
-      return jade.renderFile(templatePathResolved, loc);
-    };
-
-    function resolvePath(templatePath, options) {
-      var cacheKey = templatePath + ":" + options.useAbsoluteTemplatePath;
-
-      if (renderFileCache[cacheKey]) {
-        return renderFileCache[cacheKey];
-      }
-
-      // first we try template.en.jade
-      // if fails then template.jade
-      var templatePathWithLangAndExt = templatePath + '.' + config.lang;
-      if (!/\.jade$/.test(templatePathWithLangAndExt)) {
-        templatePathWithLangAndExt += '.jade';
-      }
+            if (!loc.schema) {
+                loc.schema = {};
+            }
 
 
-      var templatePathResolved;
-      if (options.useAbsoluteTemplatePath) {
-        templatePathResolved = templatePathWithLangAndExt;
-      } else {
-        if (templatePath[0] == '/') {
-          ctx.log.debug("Lookup " + templatePathWithLangAndExt + " in " + options.basedir);
-          templatePathResolved = path.join(options.basedir, templatePathWithLangAndExt);
-        } else {
-          ctx.log.debug("Lookup " + templatePathWithLangAndExt + " in " + ctx.templateDir);
-          templatePathResolved = path.join(ctx.templateDir, templatePathWithLangAndExt);
+            if (!loc.canonicalPath) {
+                // strip query
+                loc.canonicalPath = this.request.originalUrl.replace(/\?.*/, '');
+                // /intro/   -> /intro
+                loc.canonicalPath = loc.canonicalPath.replace(/\/+$/, '');
+            }
+
+            loc.canonicalUrl = config.server.siteHost + loc.canonicalPath;
+
+            var templatePathResolved = resolvePath(templatePath, loc);
+            this.log.debug("render file " + templatePathResolved);
+            return jade.renderFile(templatePathResolved, loc);
+        };
+
+        function resolvePath(templatePath, options) {
+            var cacheKey = templatePath + ":" + options.useAbsoluteTemplatePath;
+
+            if (renderFileCache[cacheKey]) {
+                return renderFileCache[cacheKey];
+            }
+
+            // first we try template.en.jade
+            // if fails then template.jade
+            var templatePathWithLangAndExt = templatePath + '.' + config.lang;
+            if (!/\.jade$/.test(templatePathWithLangAndExt)) {
+                templatePathWithLangAndExt += '.jade';
+            }
+
+
+            var templatePathResolved;
+            if (options.useAbsoluteTemplatePath) {
+                templatePathResolved = templatePathWithLangAndExt;
+            } else {
+                if (templatePath[0] == '/') {
+                    ctx.log.debug("Lookup " + templatePathWithLangAndExt + " in " + options.basedir);
+                    templatePathResolved = path.join(options.basedir, templatePathWithLangAndExt);
+                } else {
+                    ctx.log.debug("Lookup " + templatePathWithLangAndExt + " in " + ctx.templateDir);
+                    templatePathResolved = path.join(ctx.templateDir, templatePathWithLangAndExt);
+                }
+            }
+
+            if (!fs.existsSync(templatePathResolved)) {
+                templatePathResolved = templatePathResolved.replace(`.${config.lang}.jade`, '.jade');
+            }
+
+            renderFileCache[cacheKey] = templatePathResolved;
+
+            return templatePathResolved;
         }
-      }
 
-      if (!fs.existsSync(templatePathResolved)) {
-        templatePathResolved = templatePathResolved.replace(`.${config.lang}.jade`, '.jade');
-      }
-
-      renderFileCache[cacheKey] = templatePathResolved;
-
-      return templatePathResolved;
-    }
-
-    yield* next;
-  });
+        yield* next;
+    });
 
 };

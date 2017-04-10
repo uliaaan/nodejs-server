@@ -1,7 +1,7 @@
 const path = require('path');
 
-exports.get = function*() {
 
+exports.get = function*() {
 
     this.locals.headTitle = "Авторизация";
 

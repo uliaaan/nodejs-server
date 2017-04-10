@@ -1,10 +1,10 @@
 exports.AuthModal = require('./authModal');
 
-const AuthFrom = require('./authForm');
+const AuthForm = require('./authForm');
 
+function init() {
 
-function init(){
-    let form = new AuthFrom(window.authOptions);
+    let form = new AuthForm(window.authOptions);
 
     document.getElementById("auth-form").appendChild(form.getElem());
 
