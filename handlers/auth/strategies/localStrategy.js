@@ -1,6 +1,6 @@
 const User = require('users').User;
 const LocalStrategy = require('passport-local').Strategy;
-
+const co = require('co');
 
 function UserAuthError(message) {
     this.message = message;
@@ -17,9 +17,10 @@ module.exports = new LocalStrategy({ usernameField: 'email', passwordField: 'pas
         if (!password) throw new UserAuthError('Укажите пароль.');
 
         // anti-bruteforce pause
-        yield  function(callback) {
-            setTimeout(callback, 100);
-        };
+        // yield
+        // function(callback) {
+        //     setTimeout(callback, 100);
+        // };
 
         email = email.toLowerCase();
 

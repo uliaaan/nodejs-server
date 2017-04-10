@@ -4641,6 +4641,40 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
   "nextFreeModuleId": 1052,

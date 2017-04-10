@@ -42,6 +42,8 @@ var handlers = [
 
     'session',
 
+    'passportSession',
+
     'flash',
 
     process.env.NODE_ENV == 'development' && 'markup',
