@@ -54,6 +54,8 @@ var handlers = [
 
     'imgur',
 
+    'profile',
+
     'tutorial'
 ];
 

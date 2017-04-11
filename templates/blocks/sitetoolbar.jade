@@ -46,6 +46,7 @@ if lang=='ru'
               })();
       +e.nav-toggle-wrap
         +e('button').nav-toggle(onclick="document.querySelector('.sitetoolbar').classList.toggle('sitetoolbar_menu_open')" type="button")
+
       +b.course-search
         +e('form').form(action="/search/")
           +e.input-wrap._text
@@ -55,8 +56,10 @@ if lang=='ru'
             +b("button").button._action(type="submit" name="type" value="articles")
               +e("span").text Найти
           
+      if user
+        include ./user
+      else
+        include ./guest
 
-      include ./guest
-
-      //include ./search
+        //include ./search
 

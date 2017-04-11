@@ -1,6 +1,9 @@
 extends /layouts/main
 
 
+block append variables
+    - var sitetoolbar = true
+
 block append head
     !=js("event", {defer: true})
 

@@ -8,7 +8,6 @@ const log = require('log')();
 exports.get = function*(next) {
 
 
-    this.locals.sitetoolbar = true;
     /*logged in?
      if(this.user){
      this.redirect('/');
@@ -27,7 +26,6 @@ exports.get = function*(next) {
 exports.post = function*(next) {
 
     let error = "";
-    this.locals.sitetoolbar = true;
     let fields = this.request.body;
 
     if (!fields.title) {
