@@ -8,4 +8,4 @@ class profilePhoto extends Component{
     }
 }
 
-extends default profilePhoto;
+export default profilePhoto;

@@ -1,3 +1,3 @@
-import profilePhoto from './profilePhoto';
+import profilePhoto from './profilePhoto.jsx';
 
 export default  profilePhoto;

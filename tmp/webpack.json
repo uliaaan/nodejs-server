@@ -4760,9 +4760,77 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
-  "nextFreeModuleId": 1052,
+  "nextFreeModuleId": 1113,
   "modules": {
     "byIdentifier": {
       "node_modules/jade-loader/stringify.loader.js!handlers/auth/templates/providers.jade": 1,
@@ -5869,7 +5937,69 @@
       "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/lib/ReactPropTypesSecret.js": 1048,
       "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/checkPropTypes.js": 1049,
       "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react/lib/getNextDebugID.js": 1050,
-      "node_modules/jade-loader/index.js?root=/home/jumbot/WebstormProjects/javascript-tutorial-server/templates!handlers/auth/templates/registerForm.jade": 1051
+      "node_modules/jade-loader/index.js?root=/home/jumbot/WebstormProjects/javascript-tutorial-server/templates!handlers/auth/templates/registerForm.jade": 1051,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/babel-loader/lib/index.js!handlers/profile/client/index.js": 0,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/index.js": 1052,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/RouteUtils.js": 1053,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/PropTypes.js": 1054,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/index.js": 1055,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/factoryWithTypeCheckers.js": 1056,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/prop-types/factoryWithThrowingShims.js": 1057,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/PatternUtils.js": 1058,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/Router.js": 1059,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/create-react-class/index.js": 1060,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/create-react-class/factory.js": 1061,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/createTransitionManager.js": 1062,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/routerWarning.js": 1063,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/warning/browser.js": 1064,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/computeChangedRoutes.js": 1065,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/TransitionUtils.js": 1066,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/AsyncUtils.js": 1067,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/isActive.js": 1068,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/getComponents.js": 1069,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/PromiseUtils.js": 1070,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/matchRoutes.js": 1071,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/InternalPropTypes.js": 1072,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/RouterContext.js": 1073,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/getRouteParams.js": 1074,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/ContextUtils.js": 1075,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/RouterUtils.js": 1076,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/Link.js": 1077,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/IndexLink.js": 1078,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/withRouter.js": 1079,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/IndexRedirect.js": 1080,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/Redirect.js": 1081,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/IndexRoute.js": 1082,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/Route.js": 1083,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/match.js": 1084,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/Actions.js": 1085,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/createMemoryHistory.js": 1086,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/useQueries.js": 1087,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/query-string/index.js": 1088,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/strict-uri-encode/index.js": 1089,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/runTransitionHook.js": 1090,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/LocationUtils.js": 1091,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/PathUtils.js": 1092,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/useBasename.js": 1093,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/createMemoryHistory.js": 1094,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/createHistory.js": 1095,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/AsyncUtils.js": 1096,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/useRouterHistory.js": 1097,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/applyRouterMiddleware.js": 1098,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/browserHistory.js": 1099,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/createBrowserHistory.js": 1100,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/ExecutionEnvironment.js": 1101,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/BrowserProtocol.js": 1102,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/DOMUtils.js": 1103,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/DOMStateStorage.js": 1104,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/RefreshProtocol.js": 1105,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/createRouterHistory.js": 1106,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/react-router/lib/hashHistory.js": 1107,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/createHashHistory.js": 1108,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/HashProtocol.js": 1109,
+      "node_modules/babel-loader/lib/index.js!handlers/profile/client/routes.jsx": 1110,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profilePhoto/index.js": 1111,
+      "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profilePhoto/profilePhoto.jsx": 1112
     }
   },
   "nextFreeChunkId": 26,

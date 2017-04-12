@@ -70,7 +70,8 @@ module.exports = function(config) {
       head:                      'client/head',
       tutorial:                  'tutorial/client',
       footer:                    'client/footer',
-      event:                      'event/client'
+      event:                     'event/client',
+      profile:                   'profile/client'
     },
 
     module: {

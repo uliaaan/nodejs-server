@@ -16,7 +16,7 @@ const config = require('config');
 exports.init = function(app) {
 
     let options = {
-        store: mongooseStore.create({
+        store: new mongooseStore({
             model: 'Session',
             // expires in DB is same as cookie maxAge, but in seconds
             expires: config.auth.session.cookie.maxAge / 1000
