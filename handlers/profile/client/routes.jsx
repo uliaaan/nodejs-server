@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, IndexRoute }  from 'react-router';
-import profilePhoto from './components/profilePhoto';
-
+import { profile, profilePhoto} from './components';
+import {ProfileContainer} from './containers';
 
 export default (
-    <Route component={profilePhoto} path='profile/dennis'>
-        <IndexRoute component={profilePhoto} />
+    <Route component={profile} path='profile/dennis'>
+        <IndexRoute component={ProfileContainer} />
     </Route>
 );

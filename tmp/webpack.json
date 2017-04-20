@@ -4828,9 +4828,26 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
-  "nextFreeModuleId": 1113,
+  "nextFreeModuleId": 1118,
   "modules": {
     "byIdentifier": {
       "node_modules/jade-loader/stringify.loader.js!handlers/auth/templates/providers.jade": 1,
@@ -5999,7 +6016,12 @@
       "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/history/lib/HashProtocol.js": 1109,
       "node_modules/babel-loader/lib/index.js!handlers/profile/client/routes.jsx": 1110,
       "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profilePhoto/index.js": 1111,
-      "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profilePhoto/profilePhoto.jsx": 1112
+      "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profilePhoto/profilePhoto.jsx": 1112,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/babel-loader/lib/index.js!handlers/profile/client/components/index.js": 1113,
+      "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profilePhoto.jsx": 1114,
+      "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profile.jsx": 1115,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/babel-loader/lib/index.js!handlers/profile/client/containers/index.js": 1116,
+      "node_modules/babel-loader/lib/index.js!handlers/profile/client/containers/ProfileContainer.jsx": 1117
     }
   },
   "nextFreeChunkId": 26,
