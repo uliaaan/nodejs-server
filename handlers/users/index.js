@@ -9,6 +9,10 @@ const mountHandlerMiddleware = require('lib/mountHandlerMiddleware');
 * */
 exports.User = require('./models/user');
 
+
+/**
+ * INIT
+ * */
 exports.init = function (app) {
 
     app.use(mountHandlerMiddleware('/users', __dirname));
