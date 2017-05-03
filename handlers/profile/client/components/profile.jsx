@@ -17,6 +17,11 @@ export default class Profile extends PureComponent {
                                     Публичный профиль
                                 </li>
                                 </Link>
+                                <Link to="/profile/dennis/add">
+                                    <li className="profile__tab-link ng-binding">
+                                        Публичный профиль
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
                     </div>
