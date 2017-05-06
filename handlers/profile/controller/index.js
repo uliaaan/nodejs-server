@@ -29,8 +29,9 @@ exports.get = function*(next) {
     if(String(this.user._id) == String(user._id)){
 
         this.locals.title = this.user.displayName;
+        this.locals.cookies = this.cookies.get('sid');
 
-        this.body = this.render('index');
+        this.body = this.render('index', this.locals);
     }else{
         yield* next;
     }

@@ -1,6 +1,4 @@
-import profilePhoto from './profilePhoto.jsx';
-import profile from './profile.jsx';
-import About from './About.jsx';
-import profileList from './profileList.jsx';
+import Profile from './Profile.jsx';
+import ProfileList from './ProfileList.jsx';
 
-export { profile, profilePhoto, About, profileList };
+export { Profile, ProfileList };

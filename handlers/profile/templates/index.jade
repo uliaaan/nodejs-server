@@ -4,10 +4,11 @@ block append variables
     - var layout_header_class = "main__header_center"
     - var layout_main_class   = "main_width-limit-wide"
     - var sitetoolbar = true
-
+    - var title = locals.cookies
 block content
     !=js("profile", {defer: true})
 
     +b('div').profile
 
+        script window.title = !{escapeJSON(title)}
         +e('div')#react-view

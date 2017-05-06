@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import {profileList} from '../components'
+import {ProfileList} from '../components';
 
 export default class ProfileContainer extends Component{
 
@@ -8,7 +8,7 @@ export default class ProfileContainer extends Component{
         super(props);
 
         this.state = {
-            publicProfile: []
+            data: []
         };
 
 
@@ -21,9 +21,14 @@ export default class ProfileContainer extends Component{
 
     getPublicProfile(){
         fetch('http://javascript.in/users/me', {
-            headers: new Headers({'Content-Type': 'application/json'})
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            credentials: 'include'
         }).then(response => response.json()) // The json response to object literal
-            .then(data => this.setState({publicProfile: data}))
+            .then(data => {
+                this.setState({data: data})
+            })
             .catch(err => console.error(err));
 
     }
@@ -31,10 +36,13 @@ export default class ProfileContainer extends Component{
 
     render(){
 
-        const {publicProfile}  = this.state;
+        const {data}  = this.state;
 
         return (
-            <profileList publicProfileData={publicProfile} />
+            <div>
+                <ProfileList data={data}></ProfileList>
+
+            </div>
         );
     }
 }
