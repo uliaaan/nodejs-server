@@ -7,25 +7,22 @@ export default class Profile extends PureComponent {
     render() {
         return (
         <div className="profile">
-            <div className="profile__content">
-                <div className="profile__tabs">
-                    <div className="profile__tab ng-scope profile__tab_current">
-                        <div className="profile__tab-content">
-                            <ul>
-                                <Link to="/profile/dennis">
-                                <li className="profile__tab-link ng-binding">
-                                    Публичный профиль
-                                </li>
-                                </Link>
-                                <Link to="/profile/dennis/add">
-                                    <li className="profile__tab-link ng-binding">
-                                        Публичный профиль
-                                    </li>
-                                </Link>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div className="profile__menu col-3" role="navigation">
+
+                        <nav class="menu" data-pjax="">
+                            <h3 class="menu-heading">
+                                Personal settings
+                            </h3>
+
+                            <Link to="/profile/dennis">
+                                <a href="/settings/profile" class="js-selected-navigation-item selected menu-item" data-selected-links="avatar_settings /settings/profile">Profile</a>
+                            </Link>
+
+                            <Link to="/profile/dennis/add">
+                                <a href="/settings/admin" class="js-selected-navigation-item menu-item" data-selected-links=" /settings/admin">Account</a>
+                            </Link>
+                        </nav>
+
             </div>
         {this.props.children}
         </div>

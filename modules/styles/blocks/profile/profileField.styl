@@ -11,8 +11,12 @@ $right-cell-padding = 17px 50px 17px 0
         position relative //- for overlay
 
     &_editable:not(&_editing):hover
+        //background #f9f8f0
+        //cursor pointer
+
+    &__group:hover
         background #f9f8f0
-        cursor pointer
+
 
     & &__inline-title
         margin 25px 0 0
@@ -21,9 +25,9 @@ $right-cell-padding = 17px 50px 17px 0
         color #656565
 
     &__change
-        position relative
-
-        display none
+        display: table
+        width: 100%
+        position: relative
 
     &__lcell,
     &__rcell
@@ -153,8 +157,11 @@ $right-cell-padding = 17px 50px 17px 0
 
     &__change-content,
     &__ok-cancel
-        display table-cell
+        /*display table-cell */
+        display:block
+
         vertical-align top
+
 
     &__change-content
         padding-right 15px
