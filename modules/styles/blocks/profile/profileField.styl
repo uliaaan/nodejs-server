@@ -1,5 +1,6 @@
-$left-cell-padding = 17px 25px 17px 40px
+//$left-cell-padding = 17px 25px 17px 40px
 $right-cell-padding = 17px 50px 17px 0
+$left-cell-padding = 0px 0px 0px 0px
 
 .profile-field
     @extend $profile-item
@@ -15,7 +16,7 @@ $right-cell-padding = 17px 50px 17px 0
         //cursor pointer
 
     &__group:hover
-        background #f9f8f0
+        //background #f9f8f0
 
 
     & &__inline-title
@@ -48,6 +49,7 @@ $right-cell-padding = 17px 50px 17px 0
     &__rcell
         width 100%
         padding $right-cell-padding
+        display block
 
     &__lcell
         padding $left-cell-padding

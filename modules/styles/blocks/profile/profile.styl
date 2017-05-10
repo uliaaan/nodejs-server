@@ -6,10 +6,10 @@ $profile-item
 
     //- 20px -> 22px @iliakan
     line-height 22px
-    padding 0 50px 0 40px
+    padding 0 50px 0 0px
 
 $profile-item-content
-    padding 17px 0 17px
+    padding 0px 0 17px
 
 $profile-action-button
     @extend $button-reset
@@ -20,6 +20,8 @@ $profile-action-button
         text-decoration underline
 
 .profile
+    margin: 24px 0 0
+
     &__label
         padding 30px
         border 3px solid #eee
@@ -40,6 +42,51 @@ $profile-action-button
           top -11px
           transform rotate(45deg)
           box-sizing border-box
+
+    &__menu
+        width: 25%
+        float: left !important
+        display: block
+        padding-right: 24px !important
+
+    &__menu-list
+        margin-bottom: 15px
+        list-style: none
+        background-color: #fff
+        border: 1px solid #d1d5da
+        border-radius: 3px
+
+    &__menu-heading:first-child
+        border-top-left-radius: 2px
+        border-top-right-radius: 2px
+
+    &__menu-heading
+        display: block
+        padding: 8px 10px
+        margin-top: 0
+        margin-bottom: 0
+        font-size: 13px
+        font-weight: 600
+        line-height: 20px
+        color: #586069
+        background-color: #f3f5f8
+        border-bottom: 1px solid #e1e4e8
+
+    &__menu-item
+        position: relative
+        display: block
+        padding: 8px 10px
+        border-bottom: 1px solid #e1e4e8
+        color: #0366d6
+        text-decoration: none
+        font-size: 12px
+
+    &__menu-item .selected
+        font-weight: 600
+        color: #24292e
+        cursor: default
+        background-color: #fff
+
 
     &__view
         display block
@@ -88,7 +135,10 @@ $profile-action-button
     &__tab_current &__tab-content,
     &__content
         border-right none
-        background #f7f6ea
+        //background #f7f6ea
+        //75%
+        width: 70%
+        float: left !important
 
 
     &__tab_current &__tab-link
@@ -139,9 +189,14 @@ $profile-action-button
 
     & &__note
         //color #656565
-        color light_gray_color
-        margin-top 16px
-        margin-bottom 10px
+        color: black
+        margin-top: 0px
+        font-size: 24px
+        font-weight: normal
+        -webkit-box-flex: 1
+        -webkit-flex: 1 1 auto
+        flex: 1 1 auto
+        margin-bottom: 10px
 
     &__linked-account
         @extend $profile-item

@@ -6,10 +6,9 @@ export default class ProfileList extends PureComponent {
     render () {
 
         const{data} = this.props;
-        console.log(data);
         return (
 
-            <div className="profile ng-scope">
+            <div>
                 <div className="profile__title">
                     <div className="profile__title-content">
                         <p className="profile__note">Управление аккаунтом</p>
@@ -17,8 +16,7 @@ export default class ProfileList extends PureComponent {
                 </div>
                 <div className="profile__fields profile__fields_about">
 
-
-                    <form className="profile-field profile-field_editable">
+                    <form className="profile-field profile-field_editable" name="form" id="form">
                        <div className="profile-field__group">
                             <div className="profile-field__lcell">
                                 <div className="profile-field__name">
@@ -31,7 +29,7 @@ export default class ProfileList extends PureComponent {
                                     <div className="profile-field__change-content">
                                         <div className="profile-field__control text-input text-input_small">
                                             <div>
-                                                <input type="text" id="displayName" className="text-input__control" value={data.displayName} />
+                                                <input type="text" id="displayName" name="displayName" className="text-input__control" value={data.displayName} />
                                             </div>
                                         </div>
                                     </div>
@@ -52,7 +50,7 @@ export default class ProfileList extends PureComponent {
                                     <div className="profile-field__change-content">
                                         <div className="profile-field__control text-input text-input_small">
                                             <div>
-                                                <input type="text" id="profileName" className="text-input__control" value={data.profileName} />
+                                                <input type="text" id="profileName" name="profileName" className="text-input__control" value={data.profileName} />
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +72,7 @@ export default class ProfileList extends PureComponent {
                                     <div className="profile-field__change-content">
                                         <div className="profile-field__control text-input text-input_small">
                                             <div>
-                                                <input type="text" id="email" className="text-input__control" value={data.email} />
+                                                <input type="text" id="email" name="email" className="text-input__control" value={data.email} />
                                             </div>
                                         </div>
                                     </div>

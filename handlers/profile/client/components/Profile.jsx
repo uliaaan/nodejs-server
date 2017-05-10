@@ -6,25 +6,27 @@ export default class Profile extends PureComponent {
     //this.props.children where we render the three children components
     render() {
         return (
-        <div className="profile">
-            <div className="profile__menu col-3" role="navigation">
+        <div className="profile clearfix">
+            <div className="profile__menu" role="navigation">
 
-                        <nav class="menu" data-pjax="">
-                            <h3 class="menu-heading">
+                        <nav className="profile__menu-list" >
+                            <h5 className="profile__menu-heading">
                                 Personal settings
-                            </h3>
+                            </h5>
 
-                            <Link to="/profile/dennis">
-                                <a href="/settings/profile" class="js-selected-navigation-item selected menu-item" data-selected-links="avatar_settings /settings/profile">Profile</a>
+                            <Link to="/profile/dennis" className="profile__menu-item">
+                                Profile
                             </Link>
 
-                            <Link to="/profile/dennis/add">
-                                <a href="/settings/admin" class="js-selected-navigation-item menu-item" data-selected-links=" /settings/admin">Account</a>
+                            <Link to="/profile/dennis/add" className="profile__menu-item">
+                                Account
                             </Link>
                         </nav>
-
             </div>
-        {this.props.children}
+
+            <div className="profile__content">
+                {this.props.children}
+            </div>
         </div>
 
     );

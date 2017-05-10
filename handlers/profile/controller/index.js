@@ -28,10 +28,7 @@ exports.get = function*(next) {
     // if the visitor is the profile owner
     if(String(this.user._id) == String(user._id)){
 
-        this.locals.title = this.user.displayName;
-        this.locals.cookies = this.cookies.get('sid');
-
-        this.body = this.render('index', this.locals);
+        this.body = this.render('index');
     }else{
         yield* next;
     }
