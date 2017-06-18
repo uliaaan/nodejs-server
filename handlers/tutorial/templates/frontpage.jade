@@ -9,12 +9,30 @@ block append head
   !=js("tutorial", {defer: true})
 
 block content
-  +b.intro
-    | Vasyao TEAM&nbsp;
-    = title
   +b.course-info
     +e.header
       include /blocks/tags
+  +b.intro
+    .date-go= NowGo
+
+
+    +e.body.columns.columns_2
+      
+       +e.col.columns__col
+        +e.content
+          +b('ul').box-event.special-links-list
+            - each folder in locals.content
+              +e('li').item
+               +e('a')(href=folder.slug) 
+                +e('img')(src=folder.img_url)
+                +e('div').backgroupColor
+                +e('div').title
+                  +e('p')= folder.title
+                +e('div').place
+
+  +b.intro
+    .date-go= LaterGO
+
 
     +e.body.columns.columns_2
       

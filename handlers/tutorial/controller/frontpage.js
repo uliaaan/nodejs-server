@@ -11,7 +11,10 @@ exports.get = function *get(next) {
 
   this.locals.sitetoolbar = true;
   this.locals.siteToolbarCurrentSection = "tutorial";
-  this.locals.title = "VASYAO TEAM";
+  this.locals.NowGo = "Уже идут";
+  this.locals.LaterGO = "Скоро начнутся";
+  this.locals.EveningGO = "Скоро начнутся";
+  this.locals.TommorowGO = "Завтра";
 
 
   var tutorial = yield* CacheEntry.getOrGenerate({

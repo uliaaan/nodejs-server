@@ -5950,9 +5950,128 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 5,
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/autoprefixer-loader/index.js!modules/hoverLoader.js!node_modules/stylus-loader/index.js?linenos=true&resolve url=true!tmp/styles.styl": 0,
+          "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/css-loader/lib/css-base.js": 1,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.woff": 2,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/font/icons.otf": 3,
+          "node_modules/file-loader/index.js?name=[path][name].[ext]?[hash]!modules/styles/blocks/page-footer/slack.svg": 4
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
-  "nextFreeModuleId": 1129,
+  "nextFreeModuleId": 1155,
   "modules": {
     "byIdentifier": {
       "node_modules/jade-loader/stringify.loader.js!handlers/auth/templates/providers.jade": 1,
@@ -7137,7 +7256,33 @@
       "handlers/profile/client/components/publicProfile.jsx": 1125,
       "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/profilePublic.jsx": 1126,
       "node_modules/babel-loader/lib/index.js!handlers/profile/client/containers/profileContainer.jsx": 1127,
-      "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/Profile.jsx": 1128
+      "node_modules/babel-loader/lib/index.js!handlers/profile/client/components/Profile.jsx": 1128,
+      "node_modules/jade-loader/index.js?root=/home/ul/js/nodejs-server/templates!handlers/auth/templates/login-form.jade": 1129,
+      "ignored /home/ul/js/nodejs-server/node_modules/jade/lib fs": 1130,
+      "node_modules/jade-loader/index.js?root=/home/ul/js/nodejs-server/templates!handlers/auth/templates/registerForm.jade": 1131,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/createField.js": 1132,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/createFields.js": 1133,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/createFieldArray.js": 1134,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/createFormValueSelector.js": 1135,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormNames.js": 1136,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormValues.js": 1137,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormInitialValues.js": 1138,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormSyncErrors.js": 1139,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormMeta.js": 1140,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/selectors/getFormMeta.js": 1141,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormAsyncErrors.js": 1142,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormSyncWarnings.js": 1143,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/getFormSubmitErrors.js": 1144,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/isDirty.js": 1145,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/isInvalid.js": 1146,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/isPristine.js": 1147,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/isValid.js": 1148,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/isSubmitting.js": 1149,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/hasSubmitSucceeded.js": 1150,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/hasSubmitFailed.js": 1151,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/createReduxForm.js": 1152,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/createReducer.js": 1153,
+      "node_modules/ng-annotate-loader/loader.js!node_modules/babel-loader/lib/index.js?presets[]=es2015!node_modules/redux-form/lib/createValues.js": 1154
     }
   },
   "nextFreeChunkId": 26,
